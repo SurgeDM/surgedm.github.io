@@ -37,8 +37,7 @@ To elevate the "Synthwave" feel, floating elements (like tooltips or platform se
 
 We use a high-contrast pairing to balance marketing impact with technical density.
 
-*   **Display & Headlines (Space Grotesk):** This is our "Impact" layer. Use `display-lg` (3.5rem) for hero sections with tight letter-spacing (-0.02em). It conveys the "Surge" brand's speed and modern edge.
-*   **Technical & Body (Fira Code):** Every piece of metadata, download speed, and body paragraph must be rendered in Fira Code. This reinforces the "Terminal" identity and provides a monospace rhythm that feels deliberate and engineered.
+*   **Display, Headlines & Technical Body (JetBrains Mono):** We use JetBrains Mono across the entire system to maintain a unified "Terminal" identity. Its high-performance rhythm feels deliberate and engineered, bridging the gap between branding and metadata. Use `display-lg` (3.5rem) for hero sections with tight letter-spacing (-0.02em).Every piece of metadata, download speed, and body paragraph must be rendered in JetBrains Mono.
 
 ---
 
@@ -67,7 +66,7 @@ We do not use standard material shadows. Depth is achieved through **Tonal Layer
 ### Download Cards (Multi-Platform)
 *   **Variants:** 
     *   *Prebuilt (Primary):* Solid `primary-container` background with `on-primary` text.
-    *   *AUR/Homebrew (Secondary):* Ghost Border (`outline-variant` at 20%) with `Fira Code` mono-text.
+    *   *AUR/Homebrew (Secondary):* Ghost Border (`outline-variant` at 20%) with `JetBrains Mono` mono-text.
 *   **Forbid Dividers:** Do not use lines between "Version" and "Size" info. Use `spacing-4` (1.4rem) of horizontal gap to create separation.
 
 ### Buttons
@@ -83,7 +82,7 @@ We do not use standard material shadows. Depth is achieved through **Tonal Layer
 ## 6. Do's and Don'ts
 
 ### Do:
-*   **Use Monospace for Numbers:** Always use Fira Code for download speeds, file sizes, and percentages.
+*   **Use Monospace for Numbers:** Always use JetBrains Mono for download speeds, file sizes, and percentages.
 *   **Embrace Asymmetry:** Offset grid items by `spacing-2` to create a "glitch" in the visual order.
 *   **Keep it Sharp:** Ensure every corner is 0px. Even a 2px radius breaks the "Terminal" immersion.
 
