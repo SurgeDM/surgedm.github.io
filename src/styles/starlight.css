@@ -1,0 +1,26 @@
+:root {
+  --sl-color-accent-low: #064c51;
+  --sl-color-accent: #00e6e6;
+  --sl-color-accent-high: #c1fffe;
+  --sl-color-white: #ece1ff;
+  --sl-color-gray-1: #d8cceb;
+  --sl-color-gray-2: #b1a6c8;
+  --sl-color-gray-3: #7a7191;
+  --sl-color-gray-4: #31254e;
+  --sl-color-gray-5: #160e2c;
+  --sl-color-gray-6: #110924;
+  --sl-color-black: #0a0518;
+  --sl-font: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html {
+  background: #0a0518;
+}
+
+.site-title {
+  font-weight: 800;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+  color: #c1fffe;
+}
