@@ -1,15 +1,73 @@
 ---
-title: Installation
-description: Install Surge and find the latest usage information.
-editUrl: https://github.com/surgedm/surge/tree/main/docs
+title: "Get started with Surge"
 ---
+
+# Get started with Surge
+
+This guide gets a download running, then helps you choose whether the
+interactive TUI, a headless server, or a system service is the right fit.
 
 ## Install Surge
 
-Download the latest release or install from source using the instructions in the [Surge repository](https://github.com/surgedm/surge#installation).
+Use the package manager or release artifact that suits your platform:
 
-## Usage
+| Platform | Command or source |
+| --- | --- |
+| Windows | `winget install surge-downloader.surge`, `scoop install surge`, or `choco install surge` |
+| macOS / Linux | `brew install SurgeDM/tap/surge` |
+| Arch Linux | `yay -S surge` |
+| Nix / NixOS | `nix run github:SurgeDM/Surge` |
+| Any supported platform | [Download a release](https://github.com/SurgeDM/Surge/releases/latest) |
 
-The up-to-date command reference and examples are maintained alongside Surge itself in [the project documentation](https://github.com/surgedm/surge#usage).
+Run `surge --version` after installing to confirm that your shell can find the
+binary.
 
-If you spot anything missing, use the **Edit page** link at the bottom of this page to update the docs on GitHub.
+## Make your first download
+
+Pass a URL to `surge` to open the TUI with that download queued:
+
+```bash
+surge https://example.com/archive.zip
+```
+
+By default, the file is saved in the directory from which you ran the command.
+Use `--output` to choose a destination:
+
+```bash
+surge https://example.com/archive.zip --output ~/Downloads
+```
+
+On Windows, use a PowerShell path such as `--output "$HOME\\Downloads"`.
+
+## Choose a mode
+
+Use the **TUI** when you want to watch and manage downloads in a terminal:
+
+```bash
+surge
+```
+
+Use the **headless server** for a machine without an interactive terminal, or
+when commands and the browser extension should control a single background
+download manager:
+
+```bash
+surge server
+```
+
+Use a **system service** when the server should start with the machine:
+
+```bash
+surge service install
+surge service start
+```
+
+See [TUI, server, and remote modes](concepts/modes.md) for the differences and
+[Run Surge as a service](guides/run-as-a-service.md) before installing a
+service.
+
+## Next steps
+
+- [Add, inspect, pause, resume, and remove downloads](guides/download-files.md)
+- [Learn the TUI controls](guides/use-the-tui.md)
+- [Read the CLI reference](reference/cli.md)

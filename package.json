@@ -4,12 +4,15 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "sync-docs": "node scripts/sync-docs.mjs",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run sync-docs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/starlight": "latest",
-    "astro": "latest"
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3",
+    "@astrojs/starlight": "0.42.0",
+    "astro": "7.3.2"
   }
 }

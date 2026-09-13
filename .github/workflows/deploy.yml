@@ -24,6 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout Surge documentation
+        uses: actions/checkout@v4
+        with:
+          repository: SurgeDM/Surge
+          ref: main
+          path: .surge-source
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

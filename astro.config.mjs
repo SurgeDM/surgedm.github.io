@@ -17,11 +17,8 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Get started',
-          items: [
-            { label: 'Overview', slug: 'docs' },
-            { label: 'Installation', slug: 'docs/getting-started' },
-          ],
+          label: 'Surge documentation',
+          items: [{ autogenerate: { directory: 'docs' } }],
         },
         {
           label: 'Project',
