@@ -1,0 +1,8 @@
+#!/bin/sh
+# Short, stable bootstrap URL for the Surge installer.
+# The installer itself lives with the release tooling in the Surge repository.
+# Keep this commit pinned so the command always runs the reviewed version.
+
+set -e
+
+curl -fsSL https://raw.githubusercontent.com/SurgeDM/Surge/10560f56f0ffc38d264722a38ad78ebbe53c4f76/scripts/install.sh | sh
