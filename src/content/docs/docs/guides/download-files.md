@@ -2,8 +2,6 @@
 title: "Download and manage files"
 ---
 
-# Download and manage files
-
 Use this guide when Surge is already running locally or when you know which
 server you want to control.
 

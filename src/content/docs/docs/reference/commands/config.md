@@ -2,8 +2,6 @@
 title: "`surge config`"
 ---
 
-# `surge config`
-
 Inspect, search, change, or reset Surge settings without manually editing
 `settings.toml`.
 

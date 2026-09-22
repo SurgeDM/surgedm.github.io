@@ -2,8 +2,6 @@
 title: "Troubleshooting"
 ---
 
-# Troubleshooting
-
 Start with the smallest check that can explain the problem. Include the Surge
 version, operating system, command used, and a redacted log when reporting an
 issue. Never include an API token, a cURL command containing cookies, or private

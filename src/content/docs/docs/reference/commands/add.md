@@ -2,8 +2,6 @@
 title: "`surge add`"
 ---
 
-# `surge add`
-
 Add one or more URLs to a running Surge server without opening the TUI. `get`
 is an alias for this command.
 

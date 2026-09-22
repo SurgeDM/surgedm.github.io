@@ -2,8 +2,6 @@
 title: "Connect to a remote Surge server"
 ---
 
-# Connect to a remote Surge server
-
 Use a remote connection when the download engine runs on another machine. The
 server needs to be running first:
 

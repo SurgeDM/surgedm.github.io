@@ -2,8 +2,6 @@
 title: "Choose a Surge mode"
 ---
 
-# Choose a Surge mode
-
 Surge uses one download engine in three different ways. Pick the mode based on
 where the engine runs and how you intend to control it.
 

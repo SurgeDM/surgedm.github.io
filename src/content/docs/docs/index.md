@@ -2,8 +2,6 @@
 title: "Surge documentation"
 ---
 
-# Surge documentation
-
 Surge is a terminal download manager that can run as an interactive TUI, a
 headless server, or a system service. Start with the path that matches what you
 want to do.

@@ -2,8 +2,6 @@
 title: "How Surge Optimizes Downloads"
 ---
 
-# How Surge Optimizes Downloads
-
 Surge is designed to maximize download speeds by overcoming the limitations of standard browser downloads.
 
 ## The Problem with Browser Downloads

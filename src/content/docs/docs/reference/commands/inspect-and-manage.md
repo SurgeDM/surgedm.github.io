@@ -2,8 +2,6 @@
 title: "Inspect and manage downloads"
 ---
 
-# Inspect and manage downloads
-
 `surge ls` can inspect the local download database when Surge is not running,
 though a running server is needed for live progress. Commands that change the
 queue (`pause`, `resume`, `refresh`, `limit`, and `rm`) require a running server.

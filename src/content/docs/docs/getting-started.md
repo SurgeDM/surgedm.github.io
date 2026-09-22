@@ -2,8 +2,6 @@
 title: "Get started with Surge"
 ---
 
-# Get started with Surge
-
 This guide gets a download running, then helps you choose whether the
 interactive TUI, a headless server, or a system service is the right fit.
 

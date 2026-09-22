@@ -2,8 +2,6 @@
 title: "Run Surge as a system service"
 ---
 
-# Run Surge as a system service
-
 Install a system service when Surge should keep running after you close your
 terminal or start automatically with the machine. The service runs the headless
 server, not the interactive TUI.

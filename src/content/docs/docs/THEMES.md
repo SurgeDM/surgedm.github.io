@@ -2,8 +2,6 @@
 title: "Custom Themes Guide"
 ---
 
-# Custom Themes Guide
-
 Surge features a powerful palette-based theme engine that allows you to customize every aspect of the TUI's appearance using simple `.toml` files.
 
 ## Theme Resolution

@@ -2,8 +2,6 @@
 title: "Customize Surge"
 ---
 
-# Customize Surge
-
 Surge can be customized from the TUI or by editing files in its configuration
 directory.
 

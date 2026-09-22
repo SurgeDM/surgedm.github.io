@@ -2,8 +2,6 @@
 title: "Command-line reference"
 ---
 
-# Command-line reference
-
 This is the stable index for Surge commands. Run `surge <command> --help` for
 the exact flags in the installed release.
 

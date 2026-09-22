@@ -2,8 +2,6 @@
 title: "Fonts"
 ---
 
-# Fonts
-
 Surge ships a bundled Nerd Font so you can get a consistent TUI look and
 glyph coverage out of the box. The app itself cannot force a terminal font;
 you must install the font locally and select it in your terminal emulator.

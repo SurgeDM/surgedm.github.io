@@ -2,8 +2,6 @@
 title: "Use the Surge TUI"
 ---
 
-# Use the Surge TUI
-
 Run `surge` with no arguments to open the interactive dashboard.
 
 ```bash

@@ -2,8 +2,6 @@
 title: "Settings & Configuration"
 ---
 
-# Settings & Configuration
-
 This document covers all configuration options available in Surge. For CLI commands and flags, see the [CLI reference](reference/cli.md).
 
 ## Configuration File

@@ -2,8 +2,6 @@
 title: "`surge connect`"
 ---
 
-# `surge connect`
-
 Open the interactive TUI against a running Surge server.
 
 ```text

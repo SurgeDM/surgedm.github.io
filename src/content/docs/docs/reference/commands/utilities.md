@@ -2,8 +2,6 @@
 title: "Tokens, shell completion, and bug reports"
 ---
 
-# Tokens, shell completion, and bug reports
-
 ## `surge token`
 
 Print the authentication token for a running local Surge server:

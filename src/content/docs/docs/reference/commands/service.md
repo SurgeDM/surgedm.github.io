@@ -2,8 +2,6 @@
 title: "`surge service`"
 ---
 
-# `surge service`
-
 Manage Surge as a system service. A service runs the headless server in the
 background and is suitable for a home server, workstation, or other machine
 that should keep its queue after you close the terminal.

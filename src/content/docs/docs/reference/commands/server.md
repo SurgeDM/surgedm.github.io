@@ -2,8 +2,6 @@
 title: "`surge server`"
 ---
 
-# `surge server`
-
 Run Surge without the interactive TUI. The server owns the download queue and
 exposes the authenticated API used by `surge add`, other control commands, and
 the browser extension.
