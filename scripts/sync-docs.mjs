@@ -38,7 +38,7 @@ async function normalizeStarlightPages(directory) {
     const normalizedBody = heading === pageTitle
       ? body.replace(/^\s*#\s+.+?\s*\r?\n+/, '')
       : body;
-    const normalized = `---\ntitle: ${JSON.stringify(pageTitle)}\n---\n\n${normalizedBody}`;
+    const normalized = `---\ntitle: ${JSON.stringify(pageTitle)}\n---\n\n${normalizedBody.replace(/^(?:\r?\n)+/, '')}`;
 
     if (normalized !== content) await writeFile(file, normalized);
   }
