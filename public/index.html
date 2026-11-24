@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Surge_</title>
+  <title>Surge</title>
   <meta name="description"
     content="Surge is a blazing fast TUI download manager built in Go for power users. Opens up to 32 parallel connections per file, supports multiple mirrors, daemon mode, and a browser extension." />
   <meta name="keywords"
@@ -32,7 +32,7 @@
   <!-- Fonts preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
@@ -43,62 +43,62 @@
       theme: {
         extend: {
           colors: {
-            "primary": "#c1fffe",
+            "primary": "#a6fffc",
             "inverse-surface": "#fdf7ff",
             "surface-bright": "#31254e",
-            "primary-dim": "#00e6e6",
+            "primary-dim": "#56e7ed",
             "on-error-container": "#ffa8a3",
             "secondary-container": "#a900a9",
             "surface-container-lowest": "#000000",
             "on-tertiary": "#4a6600",
             "on-tertiary-fixed-variant": "#4b6800",
             "on-error": "#490006",
-            "primary-fixed-dim": "#00e6e6",
-            "surface-container-highest": "#2a1f45",
+            "primary-fixed-dim": "#56e7ed",
+            "surface-container-highest": "#262d39",
             "on-primary-fixed-variant": "#006262",
             "tertiary-container": "#bafd00",
-            "surface-container-low": "#160e2c",
-            "primary-container": "#00ffff",
-            "surface-container": "#1d1434",
+            "surface-container-low": "#191523",
+            "primary-container": "#56e7ed",
+            "surface-container": "#202631",
             "tertiary-fixed": "#bafd00",
             "error": "#ff716c",
-            "on-background": "#ece1ff",
-            "on-surface-variant": "#b1a6c8",
+            "on-background": "#eef2f8",
+            "on-surface-variant": "#b3bdcb",
             "tertiary-fixed-dim": "#afee00",
-            "surface-tint": "#c1fffe",
+            "surface-tint": "#a6fffc",
             "primary-fixed": "#00f5f5",
             "on-secondary": "#400040",
-            "surface-variant": "#2a1f45",
+            "surface-variant": "#262d39",
             "on-secondary-container": "#fff5f9",
-            "secondary-dim": "#ff51fa",
-            "on-surface": "#ece1ff",
-            "on-primary-container": "#005d5d",
+            "secondary-dim": "#efa4f0",
+            "on-surface": "#eef2f8",
+            "on-primary-container": "#102722",
             "on-tertiary-container": "#435d00",
-            "on-primary": "#006767",
-            "tertiary": "#e9ffba",
+            "on-primary": "#102722",
+            "tertiary": "#b9e5d5",
             "secondary-fixed-dim": "#ffa6f3",
             "outline": "#7a7191",
             "secondary-fixed": "#ffbdf3",
             "on-secondary-fixed-variant": "#920091",
-            "surface-dim": "#110924",
+            "surface-dim": "#14111e",
             "on-primary-fixed": "#004343",
-            "background": "#0a0518",
-            "surface-container-high": "#23193d",
+            "background": "#14111e",
+            "surface-container-high": "#202631",
             "error-dim": "#d7383b",
-            "secondary": "#ff51fa",
+            "secondary": "#efa4f0",
             "inverse-primary": "#006a6a",
             "error-container": "#9f0519",
             "tertiary-dim": "#afee00",
             "on-tertiary-fixed": "#344a00",
             "outline-variant": "#4c4361",
-            "surface": "#0a0518",
+            "surface": "#14111e",
             "inverse-on-surface": "#59506f",
             "on-secondary-fixed": "#620061"
           },
           fontFamily: {
-            "headline": ["JetBrains Mono"],
-            "body": ["JetBrains Mono"],
-            "label": ["JetBrains Mono"]
+            "headline": ["Inter", "system-ui", "sans-serif"],
+            "body": ["Inter", "system-ui", "sans-serif"],
+            "label": ["Inter", "system-ui", "sans-serif"]
           },
           borderRadius: { "none": "0px", "DEFAULT": "12px", "lg": "12px", "xl": "16px", "full": "9999px" },
         },
@@ -110,278 +110,9 @@
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
-    .scanline-overlay {
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-      background-size: 100% 4px, 3px 100%;
-      pointer-events: none;
-      animation: scanlineFlicker 8s ease-in-out infinite;
-    }
-
-    @keyframes scanlineFlicker {
-
-      0%,
-      92%,
-      100% {
-        opacity: 0.10;
-      }
-
-      93% {
-        opacity: 0.18;
-      }
-
-      94% {
-        opacity: 0.06;
-      }
-
-      95% {
-        opacity: 0.14;
-      }
-
-      96% {
-        opacity: 0.10;
-      }
-    }
-
-    .glow-text {
-      text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    }
-
-    .magenta-glow-text {
-      text-shadow: 0 0 15px rgba(255, 81, 250, 0.5);
-    }
-
-    .nav-bg {
-      background: linear-gradient(180deg, #0a0518 0%, rgba(10, 5, 24, 0.85) 100%);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .terminal-glow {
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Card shimmer spotlight — follows mouse */
-    .card-shimmer {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-shimmer::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 70%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-
-    .card-shimmer:hover::after {
-      opacity: 1;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      /* Hide scrollbar — all browsers */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    html::-webkit-scrollbar {
-      display: none;
-    }
-
-    body {
-      overflow-y: scroll;
-    }
-
-    body::-webkit-scrollbar {
-      display: none;
-    }
-
-    .snap-section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    #mobile-menu {
-      display: none;
-    }
-
-    #mobile-menu.open {
-      display: flex;
-    }
-
-
-
-    /* ── Glitch Effect ── */
-    .glitch-hover {
-      position: relative;
-      display: inline-block;
-    }
-
-    .glitch-hover:hover,
-    .glitch-hover.glitching {
-      animation: glitchText 0.35s steps(2) 1;
-    }
-
-    @keyframes glitchText {
-      0% {
-        text-shadow: 2px 0 #ff51fa, -2px 0 #00ffff;
-        transform: translate(0);
-      }
-
-      20% {
-        text-shadow: -3px 0 #ff51fa, 3px 0 #00ffff;
-        transform: translate(-2px, 1px);
-      }
-
-      40% {
-        text-shadow: 3px 0 #ff51fa, -3px 0 #00ffff;
-        transform: translate(2px, -1px);
-      }
-
-      60% {
-        text-shadow: -1px 0 #ff51fa, 1px 0 #00ffff;
-        transform: translate(1px, 1px);
-      }
-
-      80% {
-        text-shadow: 2px 0 #ff51fa, -2px 0 #00ffff;
-        transform: translate(-1px, -1px);
-      }
-
-      100% {
-        text-shadow: none;
-        transform: translate(0);
-      }
-    }
-
-    /* ── Scroll Reveal ── */
-    .reveal-card {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .reveal-card.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* ── Benchmark bar animation ── */
     .bench-bar {
       transition: width 2.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* ── Glow Button ── */
-    .glow-btn {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .glow-btn::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: conic-gradient(from var(--btn-angle, 0deg), #00ffff, #ff51fa, #bafd00, #00ffff);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.35s;
-      animation: rotateBtnGlow 3s linear infinite;
-    }
-
-    .glow-btn:hover::before {
-      opacity: 1;
-    }
-
-    @keyframes rotateBtnGlow {
-      to {
-        --btn-angle: 360deg;
-      }
-    }
-
-    @property --btn-angle {
-      syntax: '<angle>';
-      initial-value: 0deg;
-      inherits: false;
-    }
-
-    /* ── Binary Rain Background ── */
-    .hero-binary-rain {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      opacity: 0.06;
-    }
-
-    .binary-column {
-      position: absolute;
-      top: -100%;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #00ffff;
-      line-height: 1.4;
-      writing-mode: vertical-rl;
-      animation: binaryFall linear infinite;
-      white-space: nowrap;
-    }
-
-    @keyframes binaryFall {
-      from {
-        transform: translateY(-100%);
-      }
-
-      to {
-        transform: translateY(calc(100vh + 100%));
-      }
-    }
-
-    /* ── Pulsing Orb ── */
-    .hero-orb {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0, 255, 255, 0.12) 0%, transparent 70%);
-      animation: orbPulse 4s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-
-    @keyframes orbPulse {
-      from {
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0.4;
-      }
-
-      to {
-        transform: translate(-50%, -50%) scale(1.15);
-        opacity: 0.8;
-      }
-    }
-
-    /* ── Feature Card Icon Glows ── */
-    .feat-icon-cyan {
-      filter: drop-shadow(0 0 8px rgba(0, 230, 230, 0.55));
-    }
-
-    .feat-icon-magenta {
-      filter: drop-shadow(0 0 8px rgba(255, 81, 250, 0.55));
-    }
-
-    .feat-icon-lime {
-      filter: drop-shadow(0 0 8px rgba(186, 253, 0, 0.45));
     }
 
     /* ── Copy Button ── */
@@ -410,7 +141,7 @@
     }
 
     .copy-btn.copied {
-      color: #00ffff;
+      color: #56e7ed;
       border-color: rgba(0, 255, 255, 0.3);
       background: rgba(0, 255, 255, 0.1);
     }
@@ -428,15 +159,36 @@
     }
 
     .carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      width: 100%;
+      display: grid;
+      grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+      place-items: center;
+      aspect-ratio: 16 / 9;
     }
 
     .carousel-slide {
-      flex: 0 0 100%;
+      grid-area: 1 / 1;
       width: 100%;
+      height: 100%;
+      min-height: 0;
       object-fit: contain;
+    }
+
+    .carousel-slide[hidden] {
+      display: none;
+    }
+
+    .preview-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      min-height: 3.5rem;
+    }
+
+    #preview-toggle {
+      padding: .3rem .65rem;
+      border: 1px solid #414b58;
+      border-radius: .5rem;
     }
 
     .ui-indicator {
@@ -444,7 +196,7 @@
     }
 
     .ui-indicator.active {
-      background-color: #00ffff;
+      background-color: #56e7ed;
       transform: scale(1.2);
     }
 
@@ -508,32 +260,483 @@
       background: rgba(255, 255, 255, 0.14);
       border-color: rgba(255, 255, 255, 0.3);
     }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    #mobile-menu { display: none; }
+
+    @media (width < 1024px) {
+      #mobile-menu.open { display: flex; }
+    }
+
+    .nav-bg {
+      background: rgba(16, 19, 25, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      padding-block: clamp(4rem, 8vw, 7rem) 3rem;
+      background: radial-gradient(ellipse at 50% 75%, #26203d, transparent 68%);
+    }
+
+    .hero-copy {
+      max-width: 50rem;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .hero-license {
+      display: inline-block;
+      color: #a6fffc;
+      border: 1px solid #334b4b;
+      border-radius: 999px;
+      padding: .35rem .8rem;
+      font-size: .875rem;
+    }
+
+    .hero h1 {
+      margin-block: 1.25rem;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      font-weight: 750;
+      color: white;
+    }
+
+    .hero h1 span {
+      color: #a6fffc;
+      background: linear-gradient(100deg, #a6fffc 8%, #efa4f0 95%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-copy p {
+      max-width: 35rem;
+      margin-inline: auto;
+      color: #b3bdcb;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem;
+      margin-top: 1.75rem;
+    }
+
+    .hero-actions a {
+      border: 1px solid transparent;
+      border-radius: .75rem;
+      padding: .75rem 1.15rem;
+      font-weight: 650;
+    }
+
+    .hero-actions .hero-primary {
+      color: #102722;
+      background: #a6fffc;
+    }
+
+    .hero-actions .hero-secondary {
+      border-color: #414b58;
+      background: #211b2d;
+    }
+
+    .hero-primary:hover, .hero-license:hover {
+      background: #56e7ed;
+      color: #102722;
+    }
+
+    .hero-actions .hero-secondary:hover {
+      background: #262d39;
+    }
+
+    .hero-demo {
+      max-width: 62rem;
+      margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        min-height: min(44rem, calc(100svh - 8rem));
+        display: grid;
+        grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+        align-items: center;
+        gap: clamp(2rem, 4vw, 4rem);
+        max-width: 75rem;
+        margin-inline: auto;
+        padding-block: 2rem;
+        padding-inline: 1.5rem;
+        background: radial-gradient(ellipse at 72% 50%, #26203d, transparent 58%);
+      }
+
+      .hero-copy {
+        margin: 0;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 4vw, 3.75rem);
+        text-wrap: balance;
+      }
+
+      .hero-copy p {
+        margin-inline: 0;
+        max-width: 31ch;
+      }
+
+      .hero-actions { justify-content: flex-start; }
+      .hero-demo { width: 100%; margin: 0; }
+      .carousel-track { max-height: max(12rem, calc(100svh - 14rem)); }
+    }
+
+    .content-section {
+      padding-block: clamp(3.5rem, 7vw, 6.5rem);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    main h2, main h3, footer {
+      text-transform: none;
+    }
+
+    code {
+      font-family: "JetBrains Mono", monospace;
+      overflow-wrap: anywhere;
+    }
+
+    :focus-visible {
+      outline: 2px solid #a6fffc;
+      outline-offset: 4px;
+    }
+
+    .extension-links {
+      display: grid;
+      gap: .65rem;
+      margin-top: 1.5rem;
+    }
+
+    .extension-links li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: .25rem .75rem;
+    }
+
+    .extension-links li > span {
+      font-size: .875rem;
+      color: #b3bdcb;
+    }
+
+    .extension-handoff {
+      display: grid;
+      justify-items: center;
+      gap: .35rem;
+      padding-block: 1.25rem;
+      color: #efa4f0;
+      font-size: .875rem;
+    }
+
+    .extension-queue {
+      padding: 1rem;
+      border: 1px solid #51425e;
+      border-radius: .75rem;
+      background: #191523;
+    }
+
+    .extension-queue > div, .extension-queue p {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .875rem;
+    }
+
+    .extension-queue > div { color: #a6fffc; }
+    .extension-queue p { justify-content: space-between; margin-block: .65rem; }
+
+    .install-columns {
+      display: grid;
+      gap: 2rem 3.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .install-columns { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+    }
+
+    .install-columns h3 {
+      font-size: 1.3rem;
+      font-weight: 650;
+      margin-bottom: .9rem;
+    }
+
+    .install-row {
+      display: grid;
+      grid-template-columns: minmax(5rem, 1fr) minmax(0, 3fr);
+      gap: .75rem;
+      padding-block: 1.1rem;
+      border-top: 1px solid #40364d;
+    }
+
+    .install-row dt { font-weight: 650; }
+
+    .install-method {
+      color: #b3bdcb;
+      font-size: .875rem;
+    }
+
+    .install-command {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .65rem;
+      min-height: 2.5rem;
+      margin-top: .25rem;
+    }
+
+    .install-command code { font-size: .85rem; }
+
+    .install-command .copy-btn {
+      position: static;
+      flex-shrink: 0;
+    }
+
+    .install-command .material-symbols-outlined { font-size: 1rem; }
+
+    .install-link {
+      display: inline-block;
+      padding-block: .25rem;
+      color: #a6fffc;
+      font-size: .875rem;
+    }
+
+    .install-link:hover { text-decoration: underline; }
+
+    .feature-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: clamp(1.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .feature-layout h2 {
+      color: white;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      line-height: 1.05;
+      font-weight: 750;
+      letter-spacing: -.05em;
+    }
+
+    .feature-layout p {
+      color: #b3bdcb;
+      margin-block: 1rem;
+    }
+
+    .feature-layout a, .feature-notes a {
+      color: #a6fffc;
+      text-underline-offset: .25em;
+    }
+
+    .feature-layout a:hover, .feature-notes a:hover {
+      text-decoration: underline;
+    }
+
+    .download-diagram {
+      border: 1px solid #36454e;
+      border-radius: 1.25rem;
+      padding: clamp(1rem, 4vw, 2.5rem);
+      background: linear-gradient(145deg, #28203b, #191523);
+    }
+
+    .download-diagram figcaption, .download-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .5rem 1rem;
+      color: #b3bdcb;
+      font-size: .875rem;
+    }
+
+    .download-diagram code {
+      color: #eef2f8;
+    }
+
+    .feature-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .feature-layout { grid-area: 1 / 1; }
+
+    .feature-layout[hidden] {
+      display: grid;
+      visibility: hidden;
+    }
+
+    main > section {
+      transition: filter .35s ease;
+    }
+
+    main > section.is-dimmed:not(:focus-within) {
+      filter: brightness(.68);
+    }
+
+    .feature-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-controls button {
+      padding: .45rem .75rem;
+      border: 1px solid #414b58;
+      border-radius: .5rem;
+      font-size: .875rem;
+    }
+
+    .feature-controls button[aria-pressed="true"] {
+      color: #102722;
+      background: #a6fffc;
+      border-color: #a6fffc;
+    }
+
+    #feature-rotation { margin-inline-start: auto; }
+
+    .range-lanes {
+      display: grid;
+      gap: .75rem;
+      margin-block: 1.25rem;
+    }
+
+    .range-lanes li {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .35rem .75rem;
+      font-size: .875rem;
+    }
+
+    .range-lanes .range-meter { grid-column: 1 / -1; }
+
+    .range-meter {
+      display: block;
+      height: .55rem;
+      background: #34464c;
+      overflow: hidden;
+      border-radius: .2rem;
+    }
+
+    .range-meter i {
+      display: block;
+      height: 100%;
+      background: #a6fffc;
+    }
+
+    .file-ranges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: .6rem;
+    }
+
+    .preview-frame {
+      display: grid;
+      place-items: center;
+      min-height: 8rem;
+      margin-top: 1rem;
+      border: 1px solid #455b64;
+      border-radius: .75rem;
+      background: radial-gradient(ellipse at 50% 90%, #35645e, transparent 70%), #1b2733;
+      color: #a6fffc;
+    }
+
+    .preview-frame .material-symbols-outlined { font-size: 3rem; }
+
+    .media-timeline {
+      height: .45rem;
+      margin-block: .75rem;
+      border-radius: 1rem;
+      background: linear-gradient(to right, #a6fffc 24%, #678d88 24% 58%, #34464c 58%);
+    }
+
+    .media-timeline span {
+      display: block;
+      margin-left: 23%;
+      width: .65rem;
+      height: .65rem;
+      transform: translateY(-.1rem);
+      border-radius: 50%;
+      background: #eef2f8;
+    }
+
+    .flow-steps, .mirror-sources {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.25rem;
+    }
+
+    .flow-steps > div, .mirror-sources > span {
+      display: grid;
+      gap: .45rem;
+      padding: .65rem;
+      border: 1px solid #455b64;
+      border-radius: .65rem;
+      background: #1b2733;
+      font-size: .875rem;
+    }
+
+    .flow-steps .material-symbols-outlined, .transfer-target { color: #a6fffc; }
+    .mirror-sources { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mirror-sources > span { text-align: center; }
+
+    .mirror-file > span { height: .6rem; border-radius: .2rem; background: #a6fffc; }
+    .mirror-file > span:nth-child(2) { background: #efa4f0; }
+    .mirror-file > span:nth-child(3) { background: #b9e5d5; }
+
+    .transfer-target {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .75rem;
+      font-size: .875rem;
+    }
+
+    @media (width < 768px) {
+      .feature-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bench-bar, main > section { transition: none; }
+    }
   </style>
 </head>
 
 <body
   class="bg-background text-on-surface font-body selection:bg-secondary selection:text-surface-dim overflow-x-hidden">
-  <!-- Scanline Overlay -->
-  <div class="fixed inset-0 z-[100] scanline-overlay pointer-events-none"></div>
-
   <!-- Header -->
-  <nav id="top" class="sticky top-0 z-50 w-full nav-bg px-8 py-5">
-    <div class="max-w-[1600px] mx-auto flex justify-between items-center">
+  <nav id="top" class="sticky top-0 z-50 w-full nav-bg px-6 py-3">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="#top" class="flex items-center gap-2">
         <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo.png" alt="Surge Logo"
           class="w-8 h-8" />
-        <span class="text-2xl font-black text-white font-headline tracking-tighter italic">Surge_</span>
+        <span class="text-2xl font-black text-white font-headline tracking-tighter">Surge</span>
       </a>
       <!-- Desktop nav -->
-      <div class="hidden md:flex gap-10 items-center font-headline font-medium uppercase tracking-widest text-sm">
-        <a class="text-white hover:text-primary transition-colors border-b-2 border-primary/50 pb-1"
+      <div class="hidden lg:flex gap-6 items-center font-headline font-medium text-sm">
+        <a class="text-white hover:text-primary transition-colors"
           href="#features">Features</a>
         <a class="text-white/80 hover:text-white transition-colors" href="#downloads">Downloads</a>
         <a class="text-white/80 hover:text-white transition-colors" href="#extension">Extension</a>
         <a class="text-white/80 hover:text-white transition-colors" href="/docs/">Docs</a>
         <a class="text-secondary hover:text-secondary-dim transition-colors" href="#support">Support</a>
       </div>
-      <div class="hidden md:flex items-center gap-3">
+      <div class="hidden lg:flex items-center gap-3">
         <!-- GitHub Stars badge -->
         <a href="https://github.com/surgedm/surge" target="_blank" rel="noopener"
           class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 transition-all px-3.5 py-2 rounded-full text-sm font-headline">
@@ -553,17 +756,10 @@
         </a>
       </div>
       <div class="flex items-center gap-3">
-        <a href="#support"
-          class="hidden md:inline-flex items-center gap-2 border border-secondary/50 text-secondary font-black px-6 py-2.5 rounded-full hover:bg-secondary/10 hover:border-secondary transition-all font-headline uppercase tracking-tighter text-sm shadow-lg active:scale-95">
-          <span class="material-symbols-outlined text-[18px]">favorite</span>
-          SUPPORT
-        </a>
         <a href="#downloads"
-          class="hidden md:inline-block bg-primary text-on-primary font-black px-8 py-2.5 rounded-full hover:bg-primary-dim hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all font-headline uppercase tracking-tighter text-sm shadow-lg active:scale-95">
-          GET SURGE
-        </a>
+          class="hidden lg:inline-block bg-primary text-on-primary font-black px-8 py-2.5 rounded-full hover:bg-primary-dim hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all font-headline uppercase tracking-tighter text-sm shadow-lg active:scale-95">Get Surge</a>
         <!-- Hamburger -->
-        <button id="hamburger-btn" aria-label="Open menu" class="md:hidden flex flex-col gap-1.5 p-2"
+        <button id="hamburger-btn" aria-label="Open menu" class="lg:hidden flex flex-col gap-1.5 p-2"
           onclick="document.getElementById('mobile-menu').classList.toggle('open')">
           <span class="block w-6 h-0.5 bg-white"></span>
           <span class="block w-6 h-0.5 bg-white"></span>
@@ -573,7 +769,7 @@
     </div>
     <!-- Mobile menu -->
     <div id="mobile-menu"
-      class="md:hidden flex-col gap-4 px-4 pt-4 pb-6 font-headline uppercase tracking-widest text-sm border-t border-white/5 mt-4">
+      class="lg:hidden flex-col gap-4 px-4 pt-4 pb-6 font-headline uppercase tracking-widest text-sm border-t border-white/5 mt-4">
       <a class="text-white/80 hover:text-primary transition-colors block py-2" href="#features"
         onclick="document.getElementById('mobile-menu').classList.remove('open')">Features</a>
       <a class="text-white/80 hover:text-primary transition-colors block py-2" href="#downloads"
@@ -585,216 +781,156 @@
         onclick="document.getElementById('mobile-menu').classList.remove('open')">Support</a>
       <a href="#downloads"
         class="inline-block mt-2 bg-primary text-on-primary font-black px-8 py-2.5 rounded-full hover:bg-primary-dim transition-all font-headline uppercase tracking-tighter text-sm shadow-lg active:scale-95"
-        onclick="document.getElementById('mobile-menu').classList.remove('open')">
-        GET SURGE
-      </a>
+        onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Surge</a>
     </div>
   </nav>
 
   <main>
-    <!-- Hero Section -->
-    <section class="snap-section relative px-8 lg:px-16 overflow-hidden">
-      <!-- Binary Rain Background -->
-      <div class="hero-binary-rain" id="binary-rain"></div>
-      <!-- Pulsing Orb -->
-      <div class="hero-orb" style="top:50%; left:35%;"></div>
-      <!-- Background ambient glow -->
-      <div
-        class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/8 blur-[160px] pointer-events-none rounded-full">
+    <section class="hero px-6">
+      <div class="hero-copy">
+        <a class="hero-license" href="https://github.com/surgedm/surge">Open source · MIT licensed</a>
+        <h1>Fast downloads.<br /> <span>In your terminal.</span></h1>
+        <p>Download large files with up to 32 parallel connections. Available for Linux, macOS, and Windows.</p>
+        <div class="hero-actions">
+          <a class="hero-primary" href="#downloads">Get Surge</a>
+          <a class="hero-secondary" href="/docs/">Read the docs</a>
+        </div>
       </div>
-      <div
-        class="absolute top-1/3 right-0 w-[400px] h-[400px] bg-secondary/8 blur-[140px] pointer-events-none rounded-full">
+      <div class="hero-demo">
+        <div class="relative flex flex-col gap-4 carousel-container">
+          <div
+            class="relative border border-white/10 bg-[#242424] rounded-xl overflow-hidden shadow-2xl carousel-viewport">
+            <div class="carousel-track">
+              <img alt="Surge dashboard showing the download queue and live transfer speeds"
+                class="carousel-slide"
+                src="https://raw.githubusercontent.com/surgedm/surge/main/assets/dashboard.png" />
+              <img alt="Surge demo showing a download in progress" class="carousel-slide" hidden
+                src="https://raw.githubusercontent.com/surgedm/surge/main/assets/demo.gif" />
+              <img alt="Surge settings panel" class="carousel-slide" hidden
+                src="https://raw.githubusercontent.com/surgedm/surge/main/assets/settings.png" />
+            </div>
+          </div>
+          <div class="preview-caption">
+            <div>
+              <p id="preview-title" class="font-semibold text-white">Track every download</p>
+              <p id="preview-description" class="text-sm text-on-surface-variant">See your queue, transfer speeds, and file progress.</p>
+            </div>
+            <button type="button" id="preview-toggle" class="text-sm text-primary">Pause</button>
+          </div>
+          <div class="flex justify-center gap-3 mt-2 carousel-indicators">
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator active"
+              data-slide="0" aria-label="Show the Surge dashboard" aria-pressed="true"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator"
+              data-slide="1" aria-label="Show the Surge demo" aria-pressed="false"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator"
+              data-slide="2" aria-label="Show Surge settings" aria-pressed="false"></button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="max-w-[1600px] mx-auto w-full grid lg:grid-cols-[7fr_3fr] gap-12 items-center">
-        <!-- LEFT: Media showcase (Carousel) -->
-        <div class="relative order-2 lg:order-1">
-          <div class="absolute -inset-8 bg-primary/10 blur-[80px] opacity-50 rounded-full pointer-events-none"></div>
-          <div class="relative flex flex-col gap-4 carousel-container">
-            <div
-              class="relative border border-white/10 bg-[#000] rounded-2xl terminal-glow overflow-hidden shadow-2xl carousel-viewport">
-              <div class="carousel-track">
-                <img alt="Surge TUI live demo — download progress, network speed graph, file details"
-                  class="w-full h-auto block carousel-slide"
-                  src="https://raw.githubusercontent.com/surgedm/surge/main/assets/demo.gif" />
-                <img alt="Surge Dashboard — queue management and download overview"
-                  class="w-full h-auto block carousel-slide"
-                  src="https://raw.githubusercontent.com/surgedm/surge/main/assets/dashboard.png" />
-                <img alt="Surge Settings — configuration panel" class="w-full h-auto block carousel-slide"
-                  src="https://raw.githubusercontent.com/surgedm/surge/main/assets/settings.png" />
+    <section id="features" class="content-section px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="feature-controls" role="group" aria-label="Surge features">
+          <button type="button" aria-pressed="true">Media preview</button>
+          <button type="button" aria-pressed="false">Pause and resume</button>
+          <button type="button" aria-pressed="false">Link refresh</button>
+          <button type="button" aria-pressed="false">Multiple mirrors</button>
+          <button type="button" aria-pressed="false">Parallel downloads</button>
+          <button type="button" id="feature-rotation" aria-label="Pause feature rotation">Pause</button>
+        </div>
+        <div class="feature-stage">
+          <div class="feature-layout" data-feature-panel>
+            <div>
+              <h2>Watch before it finishes.</h2>
+              <p>Sequential mode downloads from the beginning so you can preview supported videos or audio while the rest arrives.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Media preview</span><code>sample-video.mp4</code></figcaption>
+              <div class="preview-frame" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></div>
+              <div class="media-timeline" aria-hidden="true"><span></span></div>
+              <div class="download-legend"><span>Playing now</span><span>Still downloading</span></div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Pick up where you paused.</h2>
+              <p>Pause a transfer and resume from the progress already saved.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Pause and resume</span><code>archive.zip</code></figcaption>
+              <div class="flow-steps">
+                <div><span class="material-symbols-outlined" aria-hidden="true">pause_circle</span><strong>Paused at 64%</strong><span class="range-meter" aria-hidden="true"><i style="width:64%"></i></span></div>
+                <span aria-hidden="true">→</span>
+                <div><span class="material-symbols-outlined" aria-hidden="true">play_circle</span><strong>Resumed from 64%</strong><span class="range-meter" aria-hidden="true"><i style="width:78%"></i></span></div>
               </div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Replace an expired link.</h2>
+              <p>Give a paused or failed download a fresh link for the same file, then reconnect.</p>
             </div>
-            <p class="text-center text-xs uppercase tracking-[0.24em] text-white/45 font-headline">Click to expand</p>
-            <div class="flex justify-center gap-3 mt-2 carousel-indicators">
-              <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 outline-none ui-indicator active"
-                data-slide="0" aria-label="Go to slide 1"></button>
-              <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 outline-none ui-indicator"
-                data-slide="1" aria-label="Go to slide 2"></button>
-              <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 outline-none ui-indicator"
-                data-slide="2" aria-label="Go to slide 3"></button>
+            <figure class="download-diagram">
+              <figcaption><span>Link refresh</span><code>archive.zip</code></figcaption>
+              <div class="flow-steps">
+                <div><span class="material-symbols-outlined" aria-hidden="true">link_off</span><strong>Expired link</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span class="material-symbols-outlined" aria-hidden="true">link</span><strong>Fresh link</strong></div>
+              </div>
+              <div class="transfer-target"><span class="material-symbols-outlined" aria-hidden="true">description</span> Same download</div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Download from multiple mirrors.</h2>
+              <p>Fetch different parts of the same file from multiple sources. Surge can switch sources if a connection drops.</p>
             </div>
+            <figure class="download-diagram">
+              <figcaption><span>Multiple mirrors</span><code>archive.zip</code></figcaption>
+              <div class="mirror-sources">
+                <span>Mirror A ↓</span><span>Mirror B ↓</span><span>Mirror C ↓</span>
+              </div>
+              <div class="file-ranges mirror-file" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="transfer-target"><span class="material-symbols-outlined" aria-hidden="true">description</span> One file</div>
+            </figure>
           </div>
-        </div>
-
-        <!-- RIGHT: Compact text stack -->
-        <div class="order-1 lg:order-2 flex flex-col gap-7">
-          <div
-            class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/10 border border-secondary/20 rounded-full self-start">
-            <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse inline-block"></span>
-            <span class="text-secondary text-xs font-black tracking-[0.25em] uppercase">Open Source · MIT</span>
-          </div>
-
-          <h1
-            class="font-headline text-5xl md:text-7xl font-black text-white leading-[0.88] tracking-tighter uppercase glitch-hover">
-            BLAZING<br />
-            <span class="text-primary glow-text">FAST</span><br />
-            DOWNLOADS
-          </h1>
-
-          <p
-            class="text-base md:text-lg text-on-surface-variant font-body leading-relaxed border-l-4 border-secondary pl-5 max-w-sm">
-            High-performance TUI download manager built in Go. 32 parallel connections per file. Built for power users.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
-            <a href="#downloads"
-              class="glow-btn px-8 py-4 bg-primary text-on-primary-container font-black text-base rounded-xl hover:shadow-[0_0_25px_rgba(0,255,255,0.45)] transition-all transform hover:-translate-y-0.5 text-center font-headline uppercase tracking-tight">
-              GET SURGE
-            </a>
-            <a href="/docs/"
-              class="px-8 py-4 border border-white/15 text-white/80 font-bold text-base rounded-xl hover:bg-white/5 hover:text-white transition-all text-center font-headline uppercase tracking-tight">
-              DOCS
-            </a>
-          </div>
-
-          <div class="flex gap-6 text-xs font-body text-on-surface-variant uppercase tracking-widest pt-1">
-            <span class="flex items-center gap-1.5"><span
-                class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>Linux</span>
-            <span class="flex items-center gap-1.5"><span
-                class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>macOS</span>
-            <span class="flex items-center gap-1.5"><span
-                class="w-1.5 h-1.5 rounded-full bg-tertiary inline-block"></span>Windows</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Specs / Features -->
-    <section id="features" class="snap-section py-24 px-8 lg:px-24 relative bg-surface-container-low/30">
-      <!-- Ambient background glows -->
-      <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style="background: radial-gradient(circle, rgba(0,230,230,0.05) 0%, transparent 70%); filter: blur(40px);">
-      </div>
-      <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style="background: radial-gradient(circle, rgba(255,81,250,0.05) 0%, transparent 70%); filter: blur(40px);">
-      </div>
-
-      <div class="max-w-[1600px] mx-auto relative z-10 w-full h-full flex flex-col">
-        <div class="text-center mb-12">
-          <p class="font-body text-secondary text-sm mb-4 tracking-[0.4em] uppercase font-bold">// Engine Architecture
-          </p>
-          <h2 class="font-headline text-5xl md:text-7xl font-black text-white tracking-tighter uppercase glitch-hover">
-            ENGINEERED FOR SPEED</h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-          <!-- Multi-threaded -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0s;">
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-8 border border-primary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-primary text-3xl feat-icon-cyan">speed</span>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>One file.<br />Up to 32 connections.</h2>
+              <p>Each connection requests a different byte range at the same time. Surge writes each range at its offset in the same file.</p>
+              <a href="#benchmarks">See the benchmark <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="font-body text-primary/70 text-xs mb-3 tracking-[0.3em] uppercase">// MULTI-THREADED_ENGINE</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Multi-Threaded</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Open up to 32 concurrent connections
-              per file to saturate your pipes and maximize throughput.</p>
-          </div>
-          <!-- Multiple Mirrors -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0.1s;">
-            <div
-              class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-8 border border-secondary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary text-3xl feat-icon-magenta">hub</span>
-            </div>
-            <p class="font-body text-secondary/70 text-xs mb-3 tracking-[0.3em] uppercase">// MIRROR_DISTRIBUTION</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Multiple Mirrors</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Distribute workers across all available
-              mirrors simultaneously with automatic failover on any connection drop.</p>
-          </div>
-          <!-- Sequential Download -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0.2s;">
-            <div
-              class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center mb-8 border border-tertiary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-tertiary text-3xl feat-icon-lime">stream</span>
-            </div>
-            <p class="font-body text-tertiary/70 text-xs mb-3 tracking-[0.3em] uppercase">// STREAMING_MODE</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Sequential Download
-            </h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Download files in strict order for
-              media-first access. Preview videos and audio while the download is still in progress.</p>
-          </div>
-          <!-- Headless Server -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0.3s;">
-            <div
-              class="w-16 h-16 bg-primary-dim/10 rounded-xl flex items-center justify-center mb-8 border border-primary-dim/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-primary-dim text-3xl feat-icon-cyan">terminal</span>
-            </div>
-            <p class="font-body text-primary-dim/70 text-xs mb-3 tracking-[0.3em] uppercase">// DAEMON_ARCHITECTURE</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Headless Server</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Run as a background daemon with a
-              token-protected HTTP API. Perfect for servers, Raspberry Pis, and remote orchestration.</p>
-          </div>
-          <!-- Work Stealing -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0.4s;">
-            <div
-              class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-8 border border-secondary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary text-3xl feat-icon-magenta">psychology</span>
-            </div>
-            <p class="font-body text-secondary/70 text-xs mb-3 tracking-[0.3em] uppercase">// INTELLIGENT_SCHEDULING</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Work Stealing</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Fast idle workers steal chunks from
-              slow workers. Health checks restart underperforming connections automatically.</p>
-          </div>
-          <!-- Beautiful TUI -->
-          <div
-            class="bg-[#120b29] p-10 rounded-2xl border border-white/5 card-shimmer group reveal-card h-full flex flex-col"
-            style="transition-delay: 0.5s;">
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-8 border border-primary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-primary text-3xl feat-icon-cyan">palette</span>
-            </div>
-            <p class="font-body text-primary/70 text-xs mb-3 tracking-[0.3em] uppercase">// TERMINAL_UI</p>
-            <h3 class="font-headline text-2xl font-bold mb-4 text-white uppercase tracking-tight">Beautiful TUI</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-relaxed">Built with Bubble Tea &amp; Lip Gloss.
-              Keyboard-driven workflow with live speed graphs, queued/active/done tabs and settings UI.</p>
+            <figure class="download-diagram">
+              <figcaption><span>Three connections shown</span><code>archive.zip · 12 MiB</code></figcaption>
+              <ol class="range-lanes">
+                <li><span>Connection 1</span><code>0–4 MiB</code><span class="range-meter"><i style="width: 80%"></i></span></li>
+                <li><span>Connection 2</span><code>4–8 MiB</code><span class="range-meter"><i style="width: 45%"></i></span></li>
+                <li><span>Connection 3</span><code>8–12 MiB</code><span class="range-meter"><i style="width: 65%"></i></span></li>
+              </ol>
+              <div class="download-legend"><span>↓ Written at their original offsets</span><code>archive.zip</code></div>
+              <div class="file-ranges" aria-hidden="true">
+                <span class="range-meter"><i style="width: 80%"></i></span>
+                <span class="range-meter"><i style="width: 45%"></i></span>
+                <span class="range-meter"><i style="width: 65%"></i></span>
+              </div>
+            </figure>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- Benchmarks Section -->
-    <section id="benchmarks" class="snap-section py-24 px-8 lg:px-24 relative overflow-hidden">
+    <section id="benchmarks" class="content-section py-24 px-8 lg:px-12 relative overflow-hidden">
       <div
         class="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-secondary/5 to-transparent pointer-events-none">
       </div>
-      <div class="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-24 items-center">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1">
           <div class="mb-16">
-            <p class="font-body text-primary text-sm mb-4 tracking-[0.4em] uppercase font-bold">// Performance
-              Validation</p>
             <h2
-              class="font-headline text-5xl md:text-6xl font-black text-white tracking-tighter uppercase glitch-hover">
-              BLOWING PAST<br />THE LIMITS</h2>
+              class="font-headline text-4xl md:text-5xl font-black text-white tracking-tighter">
+              Download benchmarks</h2>
           </div>
           <div class="space-y-12 max-w-lg">
             <!-- Surge -->
@@ -857,12 +993,8 @@
         </div>
         <div class="order-1 lg:order-2">
           <div
-            class="bg-[#1a0f35] p-12 border border-secondary/20 rounded-3xl relative shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <div
-              class="absolute -top-6 -right-6 bg-secondary text-surface-dim font-black px-6 py-3 uppercase text-xs tracking-[0.3em] rounded-xl shadow-xl">
-              BENCHMARK_REPORT
-            </div>
-            <p class="text-2xl text-on-surface font-headline italic leading-relaxed mb-10 text-white/90">
+            class="bg-[#211b2d] p-6 sm:p-10 border border-white/10 rounded-3xl relative shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <p class="text-2xl text-on-surface font-headline leading-relaxed mb-10 text-white/90">
               "In stress tests on a high-throughput node, Surge consistently outperformed legacy C-based managers by
               leveraging Go's efficient goroutine scheduling for parallel IO."
             </p>
@@ -871,9 +1003,9 @@
                 <span class="material-symbols-outlined text-secondary text-2xl">analytics</span>
               </div>
               <div>
-                <p class="font-bold text-white tracking-wider">VERIFIED PERFORMANCE DATA</p>
+                <p class="font-bold text-white tracking-wider">Benchmark methodology</p>
                 <a href="https://github.com/surgedm/surge#benchmarks" target="_blank" rel="noopener"
-                  class="text-xs text-secondary uppercase tracking-widest font-black hover:text-secondary-dim transition-colors">VIEW_ALL_BENCHMARKS
+                  class="text-xs text-secondary uppercase tracking-widest font-black hover:text-secondary-dim transition-colors">View all benchmarks
                   →</a>
               </div>
             </div>
@@ -882,203 +1014,150 @@
       </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="downloads" class="snap-section py-24 px-8 lg:px-24 bg-surface-container-low/30">
-      <div class="max-w-[1600px] mx-auto">
-        <div class="text-center mb-24">
-
-          <h2
-            class="font-headline text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter glitch-hover">
-            INITIATE DOWNLOAD</h2>
-          <p class="text-on-surface-variant font-body max-w-2xl mx-auto text-lg">Select your platform to inject the
-            Surge core binary into your local environment.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-10">
-          <!-- Windows -->
-          <div
-            class="bg-[#120b29] border border-white/5 hover:border-primary/40 transition-all rounded-3xl overflow-hidden group">
-            <div class="p-10">
-              <div class="flex justify-between items-start mb-10">
-                <h3 class="font-headline text-3xl font-black text-white">WINDOWS</h3>
-                <span
-                  class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-lg tracking-widest">WINGET</span>
+    <section id="downloads" class="content-section px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter">Download Surge</h2>
+        <div class="install-columns">
+          <div>
+            <h3>Desktop <a class="install-link ml-2" href="https://github.com/SurgeDM/Surge/releases/tag/v0.12.4">v0.12.4</a></h3>
+            <dl>
+              <div class="install-row">
+                <dt>Windows</dt>
+                <dd>
+                  <span class="install-method">WinGet</span>
+                  <div class="install-command">
+                    <code>winget install surgedm.surge</code>
+                    <button type="button" class="copy-btn" data-copy="winget install surgedm.surge" title="Copy" aria-label="Copy Windows install command">
+                      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+                    </button>
+                  </div>
+                  <ul aria-label="Windows downloads">
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_windows_amd64.zip"><span aria-hidden="true">↓</span> x64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_windows_arm64.zip"><span aria-hidden="true">↓</span> ARM64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_windows_386.zip"><span aria-hidden="true">↓</span> 32-bit (.zip with .exe)</a></li>
+                  </ul>
+                </dd>
               </div>
-              <div
-                class="bg-black/40 p-6 pr-14 font-body text-xs mb-10 rounded-2xl border border-white/5 relative group-hover:border-primary/20 transition-colors">
-                <span class="block text-white/30 mb-2 uppercase tracking-widest text-[8px]">Shell Command</span>
-                <code class="text-primary font-bold">winget install surgedm.surge</code>
-                <button class="copy-btn" data-copy="winget install surgedm.surge" title="Copy"
-                  aria-label="Copy command"><span class="material-symbols-outlined"
-                    style="font-size:16px">content_copy</span></button>
+              <div class="install-row">
+                <dt>macOS</dt>
+                <dd>
+                  <span class="install-method">Homebrew</span>
+                  <div class="install-command">
+                    <code>brew install surgedm/tap/surge</code>
+                    <button type="button" class="copy-btn" data-copy="brew install surgedm/tap/surge" title="Copy" aria-label="Copy macOS install command">
+                      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+                    </button>
+                  </div>
+                  <ul aria-label="macOS downloads">
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_darwin_arm64.tar.gz"><span aria-hidden="true">↓</span> Apple Silicon (.tar.gz)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_darwin_amd64.tar.gz"><span aria-hidden="true">↓</span> Intel (.tar.gz)</a></li>
+                  </ul>
+                </dd>
               </div>
-              <a href="https://github.com/surgedm/surge/releases/latest" target="_blank" rel="noopener"
-                class="block w-full py-5 bg-primary/10 border border-primary/20 text-primary font-black uppercase text-xs tracking-[0.2em] hover:bg-primary hover:text-black transition-all rounded-2xl active:scale-95 text-center">
-                DOWNLOAD .EXE
-              </a>
-            </div>
+              <div class="install-row">
+                <dt>Linux</dt>
+                <dd>
+                  <span class="install-method">Arch Linux (AUR)</span>
+                  <div class="install-command">
+                    <code>yay -S surge</code>
+                    <button type="button" class="copy-btn" data-copy="yay -S surge" title="Copy" aria-label="Copy Linux install command">
+                      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+                    </button>
+                  </div>
+                  <ul aria-label="Linux downloads">
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_linux_x86_64.AppImage"><span aria-hidden="true">↓</span> x64 (.AppImage)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_linux_amd64.tar.gz"><span aria-hidden="true">↓</span> x64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_linux_arm64.tar.gz"><span aria-hidden="true">↓</span> ARM64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href="https://github.com/SurgeDM/Surge/releases/download/v0.12.4/Surge_0.12.4_linux_386.tar.gz"><span aria-hidden="true">↓</span> 32-bit (.tar.gz)</a></li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
           </div>
-          <!-- macOS -->
-          <div
-            class="bg-[#120b29] border border-white/10 hover:border-secondary/40 transition-all rounded-3xl overflow-hidden relative group">
-            <div class="absolute inset-0 bg-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div class="p-10 relative z-10">
-              <div class="flex justify-between items-start mb-10">
-                <h3 class="font-headline text-3xl font-black text-white">MACOS</h3>
-                <span
-                  class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-black rounded-lg tracking-widest">BREW</span>
+          <div>
+            <h3>Other ways to install</h3>
+            <dl>
+              <div class="install-row">
+                <dt>Docker</dt>
+                <dd>
+                  <span class="install-method">Self-hosted server</span>
+                  <div class="install-command">
+                    <code>docker compose up -d</code>
+                    <button type="button" class="copy-btn" data-copy="docker compose up -d" title="Copy" aria-label="Copy Docker install command">
+                      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+                    </button>
+                  </div>
+                  <a href="https://github.com/surgedm/surge#4-server-mode-with-docker-compose" class="install-link">
+                    Docker setup guide <span aria-hidden="true">↗</span>
+                  </a>
+                </dd>
               </div>
-              <div
-                class="bg-black/40 p-6 pr-14 font-body text-xs mb-10 rounded-2xl border border-white/5 relative group-hover:border-secondary/20 transition-colors">
-                <span class="block text-white/30 mb-2 uppercase tracking-widest text-[8px]">Shell Command</span>
-                <code class="text-secondary font-bold">brew install surgedm/tap/surge</code>
-                <button class="copy-btn" data-copy="brew install surgedm/tap/surge" title="Copy"
-                  aria-label="Copy command"><span class="material-symbols-outlined"
-                    style="font-size:16px">content_copy</span></button>
+              <div class="install-row">
+                <dt>Go</dt>
+                <dd>
+                  <span class="install-method">Requires Go 1.25+</span>
+                  <div class="install-command">
+                    <code>go install github.com/surgedm/surge@latest</code>
+                    <button type="button" class="copy-btn" data-copy="go install github.com/surgedm/surge@latest" title="Copy" aria-label="Copy Go install command">
+                      <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+                    </button>
+                  </div>
+                </dd>
               </div>
-              <a href="https://github.com/surgedm/surge/releases/latest" target="_blank" rel="noopener"
-                class="block w-full py-5 bg-secondary text-black font-black uppercase text-xs tracking-[0.2em] hover:shadow-[0_0_30px_rgba(255,81,250,0.3)] transition-all rounded-2xl active:scale-95 text-center">
-                DOWNLOAD BINARY
-              </a>
-            </div>
-          </div>
-          <!-- Linux -->
-          <div
-            class="bg-[#120b29] border border-white/5 hover:border-tertiary/40 transition-all rounded-3xl overflow-hidden group">
-            <div class="p-10">
-              <div class="flex justify-between items-start mb-10">
-                <h3 class="font-headline text-3xl font-black text-white">LINUX</h3>
-                <span
-                  class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-black rounded-lg tracking-widest">AUR/BIN</span>
-              </div>
-              <div
-                class="bg-black/40 p-6 pr-14 font-body text-xs mb-10 rounded-2xl border border-white/5 relative group-hover:border-tertiary/20 transition-colors">
-                <span class="block text-white/30 mb-2 uppercase tracking-widest text-[8px]">Arch Linux (AUR)</span>
-                <code class="text-tertiary font-bold">yay -S surge</code>
-                <button class="copy-btn" data-copy="yay -S surge" title="Copy" aria-label="Copy command"><span
-                    class="material-symbols-outlined" style="font-size:16px">content_copy</span></button>
-              </div>
-              <a href="https://github.com/surgedm/surge/releases/latest" target="_blank" rel="noopener"
-                class="block w-full py-5 bg-tertiary/10 border border-tertiary/20 text-tertiary font-black uppercase text-xs tracking-[0.2em] hover:bg-tertiary hover:text-black transition-all rounded-2xl active:scale-95 text-center">
-                DOWNLOAD BINARY
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Docker & Go Install note -->
-        <div class="mt-12 grid md:grid-cols-2 gap-8">
-          <div class="bg-[#120b29] border border-white/5 p-8 pr-14 rounded-2xl flex items-center gap-6 relative">
-            <div
-              class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20 shrink-0">
-              <span class="material-symbols-outlined text-primary text-2xl">deployed_code</span>
-            </div>
-            <div>
-              <p class="font-body text-white/30 text-[9px] uppercase tracking-widest mb-1">Docker / Self-hosted</p>
-              <code class="text-primary text-xs font-body">docker compose up -d</code>
-              <p class="text-on-surface-variant text-xs font-body mt-1">Run Surge in server mode. <a
-                  href="https://github.com/surgedm/surge#4-server-mode-with-docker-compose" target="_blank"
-                  rel="noopener" class="text-primary hover:text-primary-dim transition-colors">View instructions →</a>
-              </p>
-            </div>
-            <button class="copy-btn" data-copy="docker compose up -d" title="Copy" aria-label="Copy command"><span
-                class="material-symbols-outlined" style="font-size:16px">content_copy</span></button>
-          </div>
-          <div class="bg-[#120b29] border border-white/5 p-8 pr-14 rounded-2xl flex items-center gap-6 relative">
-            <div
-              class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center border border-secondary/20 shrink-0">
-              <span class="material-symbols-outlined text-secondary text-2xl">code</span>
-            </div>
-            <div>
-              <p class="font-body text-white/30 text-[9px] uppercase tracking-widest mb-1">Go Install (requires Go
-                1.25+)</p>
-              <code class="text-secondary text-xs font-body">go install github.com/surgedm/surge@latest</code>
-            </div>
-            <button class="copy-btn" data-copy="go install github.com/surgedm/surge@latest" title="Copy"
-              aria-label="Copy command"><span class="material-symbols-outlined"
-                style="font-size:16px">content_copy</span></button>
+            </dl>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Browser Extension Section -->
-    <section id="extension" class="snap-section py-24 px-8 lg:px-24">
-      <div class="max-w-[1600px] mx-auto">
-        <div class="text-center mb-16">
-          <p class="font-body text-secondary text-sm mb-4 tracking-[0.4em] uppercase font-bold">// Browser Integration
-          </p>
-          <h2 class="font-headline text-5xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">BROWSER
-            EXTENSION</h2>
-          <p class="text-on-surface-variant font-body max-w-2xl mx-auto text-lg">Intercept browser downloads and send
-            them straight to your terminal. Communicates with the Surge daemon on port 1700.</p>
+    <section id="extension" class="content-section px-6">
+      <div class="feature-layout max-w-6xl mx-auto">
+        <div>
+          <h2>Click in your browser.<br />Download in Surge.</h2>
+          <p>The extension sends browser downloads to your Surge queue. Connect it with the token from <strong>Settings → Extension</strong>.</p>
+          <ul class="extension-links">
+            <li><a href="https://chromewebstore.google.com/detail/surge-download-manager/cakjmkhlofkhjmfkjlclgbfdklhdnkgl">Chrome Web Store <span aria-hidden="true">↗</span></a><span>Chrome, Edge, and Brave</span></li>
+            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/surge/">Firefox Add-ons <span aria-hidden="true">↗</span></a><span>Firefox</span></li>
+          </ul>
         </div>
-        <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          <!-- Chrome -->
-          <div
-            class="bg-[#120b29] border border-white/5 hover:border-primary/40 transition-all rounded-3xl p-10 group card-shimmer">
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-8 border border-primary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-primary text-3xl">public</span>
-            </div>
-            <h3 class="font-headline text-2xl font-black text-white uppercase tracking-tight mb-3">Chrome / Edge / Brave
-            </h3>
-            <p class="text-on-surface-variant text-sm font-body leading-loose mb-8">Download the extension zip from the
-              latest GitHub release and sideload via Developer Mode.</p>
-            <a href="https://github.com/surgedm/surge/releases/latest" target="_blank" rel="noopener"
-              class="block w-full py-4 bg-primary/10 border border-primary/20 text-primary font-black uppercase text-xs tracking-[0.2em] hover:bg-primary hover:text-black transition-all rounded-2xl active:scale-95 text-center">
-              DOWNLOAD EXTENSION
-            </a>
+        <figure class="download-diagram extension-diagram">
+          <figcaption><span>Browser download</span><code>archive.zip</code></figcaption>
+          <div class="extension-handoff" aria-hidden="true">
+            <span class="material-symbols-outlined">language</span>
+            <span>Sent to Surge</span>
+            <span class="material-symbols-outlined">south</span>
           </div>
-          <!-- Firefox -->
-          <div
-            class="bg-[#120b29] border border-secondary/20 hover:border-secondary/60 transition-all rounded-3xl p-10 group card-shimmer relative">
-            <div
-              class="absolute top-4 right-4 bg-secondary text-surface-dim font-black px-4 py-1.5 uppercase text-[10px] tracking-[0.2em] rounded-xl shadow-xl z-10">
-              OFFICIAL ADD-ON
-            </div>
-            <div
-              class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-8 border border-secondary/20 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined text-secondary text-3xl">extension</span>
-            </div>
-            <h3 class="font-headline text-2xl font-black text-white uppercase tracking-tight mb-3">Firefox</h3>
-            <p class="text-on-surface-variant text-sm font-body leading-loose mb-8">Available on the official Mozilla
-              Add-ons store. One-click install, no sideloading required.</p>
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/surge/" target="_blank" rel="noopener"
-              class="block w-full py-4 bg-secondary text-black font-black uppercase text-xs tracking-[0.2em] hover:shadow-[0_0_30px_rgba(255,81,250,0.3)] transition-all rounded-2xl active:scale-95 text-center">
-              GET ON FIREFOX
-            </a>
+          <div class="extension-queue">
+            <div><span class="material-symbols-outlined" aria-hidden="true">terminal</span> Surge queue</div>
+            <p><code>archive.zip</code><span>Downloading</span></p>
+            <span class="range-meter" aria-hidden="true"><i style="width: 58%"></i></span>
           </div>
-        </div>
+        </figure>
       </div>
     </section>
 
     <!-- Donation / Support Section -->
-    <section id="support" class="snap-section py-24 px-8 lg:px-24 text-center bg-surface-container-low/30">
+    <section id="support" class="content-section py-24 px-8 lg:px-12 text-center bg-surface-container-low/30">
       <div
-        class="max-w-6xl mx-auto bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-20 rounded-[40px] relative overflow-hidden">
+        class="max-w-6xl mx-auto bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-6 sm:p-12 rounded-3xl relative overflow-hidden">
         <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 blur-[100px] pointer-events-none"></div>
         <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/20 blur-[100px] pointer-events-none"></div>
         <div class="relative z-10">
-          <p class="font-body text-secondary text-sm mb-6 tracking-[0.4em] uppercase font-bold">// Community Powered</p>
-          <h2 class="font-headline text-5xl md:text-6xl font-black text-white mb-8 uppercase tracking-tighter">FUEL THE
-            VOID</h2>
+          <h2 class="font-headline text-4xl md:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Support Surge</h2>
           <p class="text-on-surface-variant font-body mb-4 text-xl max-w-2xl mx-auto leading-relaxed">
-            Surge is built by two CS students in between classes and exams. Your support goes directly toward publishing
-            the Chrome extension, dev tools, and Debrid integration.
+            Surge is built by two CS students in between classes and exams. Your support helps maintain
+            the browser extensions and funds development tools and Debrid integration.
           </p>
           <p class="text-on-surface-variant/50 font-body mb-12 text-sm">Stars, issues, and contributions already mean
             the world to us.</p>
           <div class="flex flex-wrap gap-6 justify-center">
-            <a class="inline-flex items-center gap-4 px-12 py-5 bg-white text-black font-black text-lg hover:scale-105 transition-all group rounded-2xl shadow-2xl"
+            <a class="inline-flex items-center gap-4 px-5 py-4 bg-white text-black font-black text-lg hover:scale-105 transition-all group rounded-2xl shadow-2xl"
               href="https://github.com/sponsors/surgedm" target="_blank" rel="noopener">
               <span class="material-symbols-outlined text-2xl"
-                style="font-variation-settings: 'FILL' 1;">favorite</span>
-              SPONSOR ON GITHUB
-            </a>
-            <a class="inline-flex items-center gap-4 px-12 py-5 bg-white/10 border border-white/10 text-white font-black text-lg hover:bg-white/15 transition-all rounded-2xl"
+                style="font-variation-settings: 'FILL' 1;">favorite</span>Sponsor on GitHub</a>
+            <a class="inline-flex items-center gap-4 px-5 py-4 bg-white/10 border border-white/10 text-white font-black text-lg hover:bg-white/15 transition-all rounded-2xl"
               href="https://www.buymeacoffee.com/surge.downloader" target="_blank" rel="noopener">
-              <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">coffee</span>
-              BUY US A COFFEE
-            </a>
+              <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">coffee</span>Buy us a coffee</a>
           </div>
         </div>
       </div>
@@ -1086,51 +1165,47 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-black border-t border-white/5 px-8 lg:px-24 py-20 font-body uppercase tracking-[0.2em] text-[10px]">
-    <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
-      <div class="col-span-2 space-y-8">
+  <footer class="bg-surface-container-low border-t border-white/10 px-6 py-10 font-body text-sm">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 space-y-3">
         <div class="flex items-center gap-3">
           <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo.png" alt="Surge Logo"
             class="w-8 h-8" />
-          <span class="text-2xl font-black text-white font-headline tracking-tighter italic">Surge_</span>
+          <span class="text-2xl font-black text-white font-headline tracking-tighter">Surge</span>
         </div>
-        <p class="text-white/40 leading-loose max-w-sm">
-          NEXT-GENERATION DOWNLOAD PROTOCOL ENGINE.<br />
-          BLAZING FAST · OPEN SOURCE · MIT LICENSE
+        <p class="text-on-surface-variant leading-loose max-w-sm">
+          An open-source download manager for your terminal.
         </p>
-        <div class="flex gap-6 text-white/30">
-          <span class="material-symbols-outlined">shield</span>
-          <span class="material-symbols-outlined">verified_user</span>
-          <span class="material-symbols-outlined">terminal</span>
-        </div>
       </div>
-      <div class="space-y-6">
-        <span class="text-white font-black block mb-4">Navigation</span>
-        <a class="block text-white/40 hover:text-primary transition-colors" href="#features">Features</a>
-        <a class="block text-white/40 hover:text-primary transition-colors" href="#benchmarks">Benchmarks</a>
-        <a class="block text-white/40 hover:text-primary transition-colors" href="#downloads">Downloads</a>
-        <a class="block text-white/40 hover:text-primary transition-colors" href="#extension">Extension</a>
+      <div class="space-y-2.5">
+        <span class="text-white font-black block mb-3">Navigation</span>
+        <a class="block text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+        <a class="block text-on-surface-variant hover:text-primary transition-colors" href="#benchmarks">Benchmarks</a>
+        <a class="block text-on-surface-variant hover:text-primary transition-colors" href="#downloads">Downloads</a>
+        <a class="block text-on-surface-variant hover:text-primary transition-colors" href="#extension">Extension</a>
+        <a class="block text-on-surface-variant hover:text-primary transition-colors" href="/docs/">Docs</a>
       </div>
-      <div class="space-y-6">
-        <span class="text-white font-black block mb-4">Connect</span>
-        <a class="block text-white/40 hover:text-secondary transition-colors" href="https://github.com/surgedm/surge"
-          target="_blank" rel="noopener">GitHub_Repo</a>
-        <a class="block text-white/40 hover:text-secondary transition-colors" href="https://x.com/SurgeDownloader"
-          target="_blank" rel="noopener">X_Network</a>
-        <a class="block text-white/40 hover:text-secondary transition-colors"
+      <div class="space-y-2.5">
+        <span class="text-white font-black block mb-3">Connect</span>
+        <a class="block text-on-surface-variant hover:text-secondary transition-colors" href="https://github.com/surgedm/surge"
+          target="_blank" rel="noopener">GitHub</a>
+        <a class="block text-on-surface-variant hover:text-secondary transition-colors" href="https://x.com/SurgeDownloader"
+          target="_blank" rel="noopener">X</a>
+        <a class="block text-on-surface-variant hover:text-secondary transition-colors"
           href="https://github.com/surgedm/surge/discussions" target="_blank" rel="noopener">Discussions</a>
-        <a class="block text-white/40 hover:text-secondary transition-colors"
-          href="https://www.buymeacoffee.com/surge.downloader" target="_blank" rel="noopener">Support_Us</a>
+        <a class="block text-on-surface-variant hover:text-secondary transition-colors"
+          href="https://www.buymeacoffee.com/surge.downloader" target="_blank" rel="noopener">Support us</a>
       </div>
     </div>
     <div
-      class="max-w-[1600px] mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/20">
-      <p>© 2025 SURGE CONTRIBUTORS. ALL SYSTEMS NOMINAL.</p>
-      <div class="flex gap-10">
+      class="max-w-6xl mx-auto mt-8 pt-5 border-t border-white/10 flex flex-wrap justify-between gap-4 text-on-surface-variant">
+      <p>© Surge contributors</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
         <a class="hover:text-white transition-colors" href="https://github.com/surgedm/surge/blob/main/LICENSE"
-          target="_blank" rel="noopener">MIT_License</a>
+          target="_blank" rel="noopener">MIT License</a>
         <a class="hover:text-white transition-colors" href="https://github.com/surgedm/surge/blob/main/CONTRIBUTING.md"
           target="_blank" rel="noopener">Contributing</a>
+        <a class="hover:text-white transition-colors" href="/privacy.html">Privacy</a>
       </div>
     </div>
   </footer>
@@ -1155,39 +1230,6 @@
               el.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : n.toString();
             }
           }).catch(() => { });
-
-        // ── Binary Rain ──
-        const rain = document.getElementById('binary-rain');
-        if (rain) {
-          for (let i = 0; i < 20; i++) {
-            const col = document.createElement('div');
-            col.className = 'binary-column';
-            const len = 40 + Math.floor(Math.random() * 60);
-            let txt = '';
-            for (let j = 0; j < len; j++) txt += Math.random() > 0.5 ? '1' : '0';
-            col.textContent = txt;
-            col.style.left = (i * 5 + Math.random() * 3) + '%';
-            col.style.animationDuration = (12 + Math.random() * 18) + 's';
-            col.style.animationDelay = -(Math.random() * 20) + 's';
-            col.style.opacity = 0.3 + Math.random() * 0.7;
-            rain.appendChild(col);
-          }
-        }
-
-        // ── Card Shimmer Spotlight ──
-        document.querySelectorAll('.card-shimmer').forEach(card => {
-          card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
-            card.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
-          });
-        });
-
-        // ── Scroll Reveal (Feature Cards) ──
-        const revealObs = new IntersectionObserver((entries) => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal-card').forEach(el => revealObs.observe(el));
 
         // ── Benchmark Bars + Counter ──
         let benchFired = false;
@@ -1223,21 +1265,6 @@
           benchObs.observe(benchSection);
         }
 
-        // ── Auto-glitch headings ──
-        const glitchEls = Array.from(document.querySelectorAll('.glitch-hover'));
-        if (glitchEls.length) {
-          function triggerRandomGlitch() {
-            const el = glitchEls[Math.floor(Math.random() * glitchEls.length)];
-            el.classList.remove('glitching');
-            void el.offsetWidth; // reflow to restart animation
-            el.classList.add('glitching');
-            el.addEventListener('animationend', () => el.classList.remove('glitching'), { once: true });
-            // Schedule next glitch in 3–7 seconds
-            setTimeout(triggerRandomGlitch, 3000 + Math.random() * 4000);
-          }
-          setTimeout(triggerRandomGlitch, 2000 + Math.random() * 2000);
-        }
-
         // ── Copy Buttons ──
         document.querySelectorAll('.copy-btn').forEach(btn => {
           btn.addEventListener('click', function (e) {
@@ -1255,6 +1282,65 @@
           });
         });
 
+        const sections = [...document.querySelectorAll('main > section')];
+        let sectionFrame;
+        function updateSectionFocus() {
+          if (sectionFrame) return;
+          sectionFrame = requestAnimationFrame(() => {
+            sectionFrame = null;
+            const readingLine = window.innerHeight * .45;
+            const active = sections.find(section => {
+              const { top, bottom } = section.getBoundingClientRect();
+              return top <= readingLine && bottom > readingLine;
+            });
+            sections.forEach(section => section.classList.toggle('is-dimmed', Boolean(active) && section !== active));
+          });
+        }
+        window.addEventListener('scroll', updateSectionFocus, { passive: true });
+        window.addEventListener('resize', updateSectionFocus);
+        updateSectionFocus();
+
+        const features = document.getElementById('features');
+        const panels = [...features.querySelectorAll('[data-feature-panel]')];
+        const featureButtons = [...features.querySelectorAll('[aria-pressed]')];
+        const featureRotation = document.getElementById('feature-rotation');
+        let featureIndex = 0;
+        let featurePlaying = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let featuresVisible = false;
+        let featureTimer;
+
+        function showFeature(index) {
+          featureIndex = index;
+          panels.forEach((panel, i) => { panel.hidden = i !== index; });
+          featureButtons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+        }
+
+        function scheduleFeatures() {
+          clearTimeout(featureTimer);
+          const action = featurePlaying ? 'Pause' : 'Play';
+          featureRotation.textContent = action;
+          featureRotation.setAttribute('aria-label', action + ' feature rotation');
+          if (!featurePlaying || !featuresVisible || document.hidden || features.matches(':hover, :focus-within')) return;
+          featureTimer = setTimeout(() => {
+            showFeature((featureIndex + 1) % panels.length);
+            scheduleFeatures();
+          }, 12000);
+        }
+
+        featureButtons.forEach((button, index) => button.addEventListener('click', () => showFeature(index)));
+        featureRotation.addEventListener('click', () => {
+          featurePlaying = !featurePlaying;
+          scheduleFeatures();
+        });
+        ['pointerenter', 'pointerleave', 'focusin', 'focusout'].forEach(event => {
+          features.addEventListener(event, () => setTimeout(scheduleFeatures, 0));
+        });
+        document.addEventListener('visibilitychange', scheduleFeatures);
+        new IntersectionObserver(([entry]) => {
+          featuresVisible = entry.isIntersecting;
+          scheduleFeatures();
+        }, { threshold: .25 }).observe(features);
+
         // ── Carousel ──
         const track = document.querySelector('.carousel-track');
         const slides = document.querySelectorAll('.carousel-slide');
@@ -1264,31 +1350,49 @@
         const lightboxImage = document.getElementById('media-lightbox-image');
         const lightboxClose = document.getElementById('media-lightbox-close');
         let currentSlide = 0;
-        let carouselInterval;
+        const previewTitle = document.getElementById('preview-title');
+        const previewDescription = document.getElementById('preview-description');
+        const previewToggle = document.getElementById('preview-toggle');
+        const preview = viewport.closest('.carousel-container');
+        const captions = [
+          ['Track every download', 'See your queue, transfer speeds, and file progress.'],
+          ['Download in parallel', 'Watch Surge fetch several parts of a file at once.'],
+          ['Tune your downloads', 'Set connection limits and choose where files go.'],
+        ];
+        let rotating = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let rotationTimer;
+
+        function scheduleRotation() {
+          clearTimeout(rotationTimer);
+          previewToggle.textContent = rotating ? 'Pause' : 'Play';
+          if (!rotating || document.hidden || preview.matches(':hover, :focus-within')
+              || lightbox.classList.contains('open')) return;
+          rotationTimer = setTimeout(() => {
+            goToSlide((currentSlide + 1) % slides.length);
+            scheduleRotation();
+          }, 12000);
+        }
+
+        previewToggle.addEventListener('click', () => {
+          rotating = !rotating;
+          scheduleRotation();
+        });
+        ['pointerenter', 'pointerleave', 'focusin', 'focusout'].forEach(event => {
+          preview.addEventListener(event, () => setTimeout(scheduleRotation, 0));
+        });
+        document.addEventListener('visibilitychange', scheduleRotation);
+
 
         function goToSlide(index) {
-          if (!track) return;
           currentSlide = index;
-          track.style.transform = `translateX(-${currentSlide * 100}%)`;
-          indicators.forEach((ind, i) => {
-            if (i === currentSlide) ind.classList.add('active');
-            else ind.classList.remove('active');
+          const [title, description] = captions[index];
+          previewTitle.textContent = title;
+          previewDescription.textContent = description;
+          slides.forEach((slide, i) => { slide.hidden = i !== index; });
+          indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+            indicator.setAttribute('aria-pressed', String(i === index));
           });
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % slides.length;
-          goToSlide(currentSlide);
-        }
-
-        function startCarousel() {
-          if (lightbox?.classList.contains('open')) return;
-          clearInterval(carouselInterval);
-          carouselInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopCarousel() {
-          clearInterval(carouselInterval);
         }
 
         function openLightbox() {
@@ -1299,7 +1403,7 @@
           lightbox.classList.add('open');
           lightbox.setAttribute('aria-hidden', 'false');
           document.body.classList.add('overflow-hidden');
-          stopCarousel();
+          scheduleRotation();
         }
 
         function closeLightbox() {
@@ -1309,23 +1413,15 @@
           lightboxImage.src = '';
           lightboxImage.alt = '';
           document.body.classList.remove('overflow-hidden');
-          stopCarousel();
-          startCarousel();
+          scheduleRotation();
         }
 
         if (track && slides.length > 0) {
           indicators.forEach((ind, i) => {
-            ind.addEventListener('click', () => {
-              goToSlide(i);
-              stopCarousel();
-              startCarousel();
-            });
+            ind.addEventListener('click', () => goToSlide(i));
           });
 
-          // Pause carousel on hover
           if (viewport) {
-            viewport.addEventListener('mouseenter', stopCarousel);
-            viewport.addEventListener('mouseleave', startCarousel);
             viewport.addEventListener('click', openLightbox);
           }
 
@@ -1336,11 +1432,10 @@
             });
           }
 
+          scheduleRotation();
           document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') closeLightbox();
           });
-
-          startCarousel();
         }
       })();
   </script>
