@@ -6,6 +6,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Surge Docs',
+      components: {
+        SiteTitle: './src/components/DocsSiteTitle.astro',
+        Footer: './src/components/DocsFooter.astro',
+      },
       description: 'Documentation for Surge, the blazing-fast terminal download manager.',
       disable404Route: true,
       social: [

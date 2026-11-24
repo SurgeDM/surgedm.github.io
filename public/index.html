@@ -27,7 +27,7 @@
   <meta name="twitter:image" content="https://surgedm.github.io/assets/dashboard.png" />
 
   <link rel="canonical" href="https://surgedm.github.io/" />
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo.png" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo_nobg.png" />
 
   <!-- Fonts preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -413,6 +413,107 @@
       outline-offset: 4px;
     }
 
+    .feature-layout .partner-card {
+      display: grid;
+      align-content: center;
+      gap: .4rem;
+      min-height: 11rem;
+      padding: clamp(1.5rem, 5vw, 3rem);
+      border: 1px solid #51425e;
+      border-radius: 1.25rem;
+      background: linear-gradient(120deg, #211b2d, #302140);
+      text-decoration: none;
+    }
+
+    .partner-card:hover { border-color: #efa4f0; }
+    .partner-card span {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      letter-spacing: -.055em;
+      line-height: 1.1;
+    }
+
+    .partner-card small { color: #efa4f0; }
+
+    .support-panel {
+      padding: clamp(1.25rem, 5vw, 3rem);
+      background: linear-gradient(130deg, #211b2d, #191523);
+      border: 1px solid #40364d;
+      border-radius: 1.25rem;
+    }
+
+    .support-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 1.5rem;
+    }
+
+    .support-links a {
+      padding: .65rem .85rem;
+      border: 1px solid #51425e;
+      border-radius: .5rem;
+      font-size: .875rem;
+      font-weight: 650;
+    }
+
+    .support-links a:first-child {
+      background: #efa4f0;
+      color: #24152b;
+    }
+
+    .support-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: min(100%, 19rem);
+      aspect-ratio: 16 / 9;
+      margin-inline: auto;
+      border: 1px solid #51425e;
+      border-radius: 1rem;
+      background: radial-gradient(ellipse at center, #39274e, #191523 70%);
+      color: #a6fffc;
+    }
+
+    .support-art .material-symbols-outlined { font-size: 5rem; }
+    .support-art .material-symbols-outlined:last-child {
+      position: absolute;
+      top: 19%;
+      right: 26%;
+      font-size: 2rem;
+      color: #efa4f0;
+    }
+
+    .footer-headline {
+      font-size: clamp(1.65rem, 4vw, 2.65rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
+      line-height: 1.08;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .footer-wordmark {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #40364d;
+      color: #a6fffc;
+      font-size: clamp(5rem, 17vw, 13rem);
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: 1;
+    }
+
+    .header-wordmark {
+      color: #a6fffc;
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: 1;
+    }
+
+    .header-wordmark span, .footer-wordmark span { color: #efa4f0; }
+
     .extension-links {
       display: grid;
       gap: .65rem;
@@ -456,6 +557,30 @@
 
     .extension-queue > div { color: #a6fffc; }
     .extension-queue p { justify-content: space-between; margin-block: .65rem; }
+
+    @media (min-width: 1024px) {
+      .benchmark-section {
+        display: grid;
+        align-items: center;
+        min-height: min(42rem, calc(100svh - 5rem));
+        padding-block: 3rem;
+      }
+    }
+
+    .benchmark-conditions { margin-top: .75rem; }
+
+    .benchmark-conditions div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .25rem 1rem;
+      border-bottom: 1px solid #51425e;
+      padding-block: .65rem;
+      font-size: .875rem;
+    }
+
+    .benchmark-conditions dt { color: #b3bdcb; }
+    .benchmark-conditions + a { margin-top: .75rem; }
 
     .install-columns {
       display: grid;
@@ -723,9 +848,9 @@
   <nav id="top" class="sticky top-0 z-50 w-full nav-bg px-6 py-3">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="#top" class="flex items-center gap-2">
-        <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo.png" alt="Surge Logo"
+        <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo_nobg.png" alt="" width="32" height="32"
           class="w-8 h-8" />
-        <span class="text-2xl font-black text-white font-headline tracking-tighter">Surge</span>
+        <span class="header-wordmark">Surge<span aria-hidden="true">.</span></span>
       </a>
       <!-- Desktop nav -->
       <div class="hidden lg:flex gap-6 items-center font-headline font-medium text-sm">
@@ -921,24 +1046,19 @@
     </section>
 
     <!-- Benchmarks Section -->
-    <section id="benchmarks" class="content-section py-24 px-8 lg:px-12 relative overflow-hidden">
-      <div
-        class="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-secondary/5 to-transparent pointer-events-none">
-      </div>
-      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1">
-          <div class="mb-16">
+    <section id="benchmarks" class="content-section px-6 benchmark-section">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+        <div class="min-w-0">
+          <div class="mb-8">
             <h2
               class="font-headline text-4xl md:text-5xl font-black text-white tracking-tighter">
               Download benchmarks</h2>
           </div>
-          <div class="space-y-12 max-w-lg">
+          <div class="space-y-6">
             <!-- Surge -->
             <div class="space-y-3">
-              <div class="flex justify-between items-end text-xs uppercase font-bold tracking-widest">
-                <span class="text-white flex items-center gap-3">SURGE<span
-                    class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] rounded-md border border-primary/20 tracking-normal font-black">TOP
-                    PERFORMER</span></span>
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">Surge</span>
                 <span class="text-primary text-xl font-black font-body" data-count-to="35.40" data-suffix=" MB/s">0.00
                   MB/s</span>
               </div>
@@ -950,10 +1070,8 @@
             </div>
             <!-- aria2c -->
             <div class="space-y-3">
-              <div class="flex justify-between items-end text-xs uppercase font-bold tracking-widest">
-                <span class="text-white flex items-center gap-2">ARIA2C <span
-                    class="text-primary/70 text-[8px] font-bold tracking-widest uppercase mb-0.5">// Surge is 1.4x
-                    faster</span></span>
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">aria2c</span>
                 <span class="text-white/80 font-body">25.57 MB/s</span>
               </div>
               <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
@@ -963,10 +1081,8 @@
             </div>
             <!-- curl -->
             <div class="space-y-3">
-              <div class="flex justify-between items-end text-xs uppercase font-bold tracking-widest">
-                <span class="text-white flex items-center gap-2">CURL <span
-                    class="text-primary/70 text-[8px] font-bold tracking-widest uppercase mb-0.5">// Surge is 2.0x
-                    faster</span></span>
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">curl</span>
                 <span class="text-white/80 font-body">17.79 MB/s</span>
               </div>
               <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
@@ -976,10 +1092,8 @@
             </div>
             <!-- wget -->
             <div class="space-y-3">
-              <div class="flex justify-between items-end text-xs uppercase font-bold tracking-widest">
-                <span class="text-white flex items-center gap-2">WGET <span
-                    class="text-primary/70 text-[8px] font-bold tracking-widest uppercase mb-0.5">// Surge is 2.1x
-                    faster</span></span>
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">wget</span>
                 <span class="text-white/80 font-body">16.57 MB/s</span>
               </div>
               <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
@@ -987,30 +1101,18 @@
                   data-target="47" style="width: 0%;"></div>
               </div>
             </div>
-            <p class="text-on-surface-variant/50 text-xs font-body">Test: 1 GB file · Windows 11 · Ryzen 5 5600X · 360
-              Mbps · 5 runs averaged</p>
           </div>
         </div>
-        <div class="order-1 lg:order-2">
-          <div
-            class="bg-[#211b2d] p-6 sm:p-10 border border-white/10 rounded-3xl relative shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <p class="text-2xl text-on-surface font-headline leading-relaxed mb-10 text-white/90">
-              "In stress tests on a high-throughput node, Surge consistently outperformed legacy C-based managers by
-              leveraging Go's efficient goroutine scheduling for parallel IO."
-            </p>
-            <div class="flex items-center gap-6 pt-6 border-t border-white/5">
-              <div class="w-14 h-14 bg-secondary/20 flex items-center justify-center rounded-2xl">
-                <span class="material-symbols-outlined text-secondary text-2xl">analytics</span>
-              </div>
-              <div>
-                <p class="font-bold text-white tracking-wider">Benchmark methodology</p>
-                <a href="https://github.com/surgedm/surge#benchmarks" target="_blank" rel="noopener"
-                  class="text-xs text-secondary uppercase tracking-widest font-black hover:text-secondary-dim transition-colors">View all benchmarks
-                  →</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <aside class="download-diagram">
+          <h3 class="text-xl font-bold text-white">Test setup</h3>
+          <dl class="benchmark-conditions">
+            <div><dt>File size</dt><dd>1 GB</dd></div>
+            <div><dt>Connection</dt><dd>360 Mbps</dd></div>
+            <div><dt>System</dt><dd>Windows 11 · Ryzen 5 5600X</dd></div>
+            <div><dt>Sample</dt><dd>Average of five runs</dd></div>
+          </dl>
+          <a class="install-link" href="https://github.com/surgedm/surge#benchmarks">View benchmark results</a>
+        </aside>
       </div>
     </section>
 
@@ -1136,29 +1238,33 @@
       </div>
     </section>
 
-    <!-- Donation / Support Section -->
-    <section id="support" class="content-section py-24 px-8 lg:px-12 text-center bg-surface-container-low/30">
-      <div
-        class="max-w-6xl mx-auto bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-6 sm:p-12 rounded-3xl relative overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 blur-[100px] pointer-events-none"></div>
-        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/20 blur-[100px] pointer-events-none"></div>
-        <div class="relative z-10">
-          <h2 class="font-headline text-4xl md:text-5xl font-black text-white mb-8 uppercase tracking-tighter">Support Surge</h2>
-          <p class="text-on-surface-variant font-body mb-4 text-xl max-w-2xl mx-auto leading-relaxed">
-            Surge is built by two CS students in between classes and exams. Your support helps maintain
-            the browser extensions and funds development tools and Debrid integration.
-          </p>
-          <p class="text-on-surface-variant/50 font-body mb-12 text-sm">Stars, issues, and contributions already mean
-            the world to us.</p>
-          <div class="flex flex-wrap gap-6 justify-center">
-            <a class="inline-flex items-center gap-4 px-5 py-4 bg-white text-black font-black text-lg hover:scale-105 transition-all group rounded-2xl shadow-2xl"
-              href="https://github.com/sponsors/surgedm" target="_blank" rel="noopener">
-              <span class="material-symbols-outlined text-2xl"
-                style="font-variation-settings: 'FILL' 1;">favorite</span>Sponsor on GitHub</a>
-            <a class="inline-flex items-center gap-4 px-5 py-4 bg-white/10 border border-white/10 text-white font-black text-lg hover:bg-white/15 transition-all rounded-2xl"
-              href="https://www.buymeacoffee.com/surge.downloader" target="_blank" rel="noopener">
-              <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">coffee</span>Buy us a coffee</a>
+    <section id="partners" class="content-section px-6">
+      <div class="feature-layout max-w-6xl mx-auto">
+        <div>
+          <h2>Partners</h2>
+          <p>FOSS United supports Surge’s open-source development through its grant program.</p>
+          <a href="https://fossunited.org/">Get to know FOSS United <span aria-hidden="true">↗</span></a>
+        </div>
+        <a class="partner-card" href="https://fossunited.org/">
+          <span>FOSS United</span>
+          <small>Open-source grant supporter</small>
+        </a>
+      </div>
+    </section>
+
+    <section id="support" class="content-section px-6">
+      <div class="feature-layout support-panel max-w-6xl mx-auto">
+        <div>
+          <h2>Support open-source Surge.</h2>
+          <p>Surge is built by two CS students. Donations help maintain the browser extensions and fund development tools and Debrid integration.</p>
+          <div class="support-links">
+            <a href="https://github.com/sponsors/surgedm">GitHub Sponsors ↗</a>
+            <a href="https://www.buymeacoffee.com/surge.downloader">Buy us a coffee ↗</a>
           </div>
+        </div>
+        <div class="support-art" aria-hidden="true">
+          <span class="material-symbols-outlined">terminal</span>
+          <span class="material-symbols-outlined">favorite</span>
         </div>
       </div>
     </section>
@@ -1168,14 +1274,8 @@
   <footer class="bg-surface-container-low border-t border-white/10 px-6 py-10 font-body text-sm">
     <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
       <div class="col-span-2 space-y-3">
-        <div class="flex items-center gap-3">
-          <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo.png" alt="Surge Logo"
-            class="w-8 h-8" />
-          <span class="text-2xl font-black text-white font-headline tracking-tighter">Surge</span>
-        </div>
-        <p class="text-on-surface-variant leading-loose max-w-sm">
-          An open-source download manager for your terminal.
-        </p>
+        <p class="footer-headline">A faster download.<br />One terminal away.</p>
+        <a class="text-primary font-semibold" href="#downloads">Get Surge</a>
       </div>
       <div class="space-y-2.5">
         <span class="text-white font-black block mb-3">Navigation</span>
@@ -1197,6 +1297,7 @@
           href="https://www.buymeacoffee.com/surge.downloader" target="_blank" rel="noopener">Support us</a>
       </div>
     </div>
+    <div class="footer-wordmark max-w-6xl mx-auto" aria-hidden="true">Surge<span>.</span></div>
     <div
       class="max-w-6xl mx-auto mt-8 pt-5 border-t border-white/10 flex flex-wrap justify-between gap-4 text-on-surface-variant">
       <p>© Surge contributors</p>

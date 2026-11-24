@@ -1,0 +1,9 @@
+---
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="docs-brand" aria-label={siteTitle}>
+  <img src="https://raw.githubusercontent.com/surgedm/surge/main/assets/logo_nobg.png" alt="" width="30" height="30" />
+  <span class="docs-wordmark">Surge<span>.</span></span>
+  <span class="docs-label">Docs</span>
+</a>
