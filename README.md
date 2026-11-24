@@ -7,7 +7,7 @@ Surge is a high-performance download manager built in Go, featuring a beautiful 
 
 ## Development
 
-The marketing site is served from `public/`; Starlight documentation is available at `/docs/`.
+The homepage, privacy policy, and 404 page are Astro routes in `src/pages/`. Starlight serves the documentation at `/docs/`. Shared site components live in `src/components/`.
 
 ```sh
 npm install

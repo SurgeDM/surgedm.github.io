@@ -1,0 +1,9 @@
+---
+const { label } = Astro.props;
+---
+<div class="install-command">
+  <code><slot /></code>
+  <button type="button" class="copy-btn" title="Copy command" aria-label={`Copy ${label} command`}>
+    <span class="material-symbols-outlined" aria-hidden="true">content_copy</span>
+  </button>
+</div>

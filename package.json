@@ -10,9 +10,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.0",
+    "@astrojs/starlight": "0.42.0",
     "@emnapi/core": "1.11.3",
     "@emnapi/runtime": "1.11.3",
-    "@astrojs/starlight": "0.42.0",
     "astro": "7.3.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
   }
 }

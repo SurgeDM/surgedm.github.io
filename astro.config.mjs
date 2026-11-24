@@ -1,11 +1,15 @@
 import { defineConfig } from 'astro/config';
+import { satteri } from '@astrojs/markdown-satteri';
 import starlight from '@astrojs/starlight';
+import docsLinks from './scripts/docs-links.mjs';
 
 export default defineConfig({
   site: 'https://surgedm.github.io',
+  markdown: { processor: satteri({ hastPlugins: [docsLinks] }) },
   integrations: [
     starlight({
       title: 'Surge Docs',
+      favicon: '/assets/logo_nobg.png',
       components: {
         SiteTitle: './src/components/DocsSiteTitle.astro',
         Footer: './src/components/DocsFooter.astro',
@@ -32,6 +36,7 @@ export default defineConfig({
           label: 'Guides',
           items: [
             { label: 'Download and manage files', slug: 'docs/guides/download-files' },
+            { label: 'Connect the browser extension', slug: 'docs/guides/browser-extension' },
             { label: 'Use the Surge TUI', slug: 'docs/guides/use-the-tui' },
             { label: 'Connect to a remote server', slug: 'docs/guides/connect-to-a-remote-server' },
             { label: 'Run as a system service', slug: 'docs/guides/run-as-a-service' },

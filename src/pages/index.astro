@@ -1,0 +1,393 @@
+---
+import InstallCommand from '../components/InstallCommand.astro';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import '../styles/home.css';
+
+const release = '0.12.4';
+const project = 'https://github.com/SurgeDM/Surge';
+const releaseAsset = (filename: string) =>
+  `${project}/releases/download/v${release}/Surge_${release}_${filename}`;
+---
+<MarketingLayout title="Surge — Terminal Download Manager" description="Download large files in parallel with Surge, an open-source terminal download manager for Linux, macOS, and Windows." canonical="/">
+  <Fragment slot="head">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Surge — Blazing Fast TUI Download Manager" />
+    <meta property="og:description"
+      content="High-performance download manager built in Go. Multi-threaded, multi-mirror, daemon architecture. Built for power users." />
+    <meta property="og:image" content="https://surgedm.github.io/assets/dashboard.png" />
+    <meta property="og:url" content="https://surgedm.github.io/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SurgeDownloader" />
+    <meta name="twitter:title" content="Surge — Blazing Fast TUI Download Manager" />
+    <meta name="twitter:description"
+      content="Multi-threaded, multi-mirror download manager with a beautiful TUI. Built in Go for power users." />
+    <meta name="twitter:image" content="https://surgedm.github.io/assets/dashboard.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet" />
+  </Fragment>
+    <section class="hero px-6">
+      <div class="hero-copy">
+        <a class="hero-license" href="https://github.com/surgedm/surge">Open source · MIT licensed</a>
+        <h1>Fast downloads.<br /> <span>In your terminal.</span></h1>
+        <p>Download large files over parallel connections. Available for Linux, macOS, and Windows.</p>
+        <div class="hero-actions">
+          <a class="hero-primary" href="#downloads">Get Surge</a>
+          <a class="hero-secondary" href="/docs/">Read the docs</a>
+        </div>
+      </div>
+      <div class="hero-demo">
+        <div class="relative flex flex-col gap-4 carousel-container">
+          <button type="button" aria-label="Expand Surge preview"
+            class="relative border border-white/10 bg-[#242424] rounded-xl overflow-hidden shadow-2xl carousel-viewport">
+            <span class="carousel-track">
+              <img alt="Surge dashboard showing the download queue and live transfer speeds"
+                class="carousel-slide" data-title="Track every download"
+                data-description="See your queue, transfer speeds, and file progress." src="/assets/dashboard.png" />
+              <img class="carousel-slide" hidden alt="Surge demo showing a download in progress"
+                data-title="Download in parallel" data-description="Open the preview to play the demo."
+                data-video="/assets/demo.mp4" src="/assets/demo-preview.jpg" />
+              <img alt="Surge settings panel" class="carousel-slide" hidden data-title="Tune your downloads"
+                data-description="Set connection limits and choose where files go." src="/assets/settings.png" />
+            </span>
+          </button>
+          <div class="preview-caption">
+            <div>
+              <p id="preview-title" class="font-semibold text-white">Track every download</p>
+              <p id="preview-description" class="text-sm text-on-surface-variant">See your queue, transfer speeds, and file progress.</p>
+            </div>
+            <button type="button" id="preview-toggle" class="text-sm text-primary">Pause</button>
+          </div>
+          <div class="flex justify-center gap-3 mt-2 carousel-indicators">
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator"
+              data-slide="0" aria-label="Show the Surge dashboard" aria-pressed="true"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator"
+              data-slide="1" aria-label="Show the Surge demo" aria-pressed="false"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/40 ui-indicator"
+              data-slide="2" aria-label="Show Surge settings" aria-pressed="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="content-section px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="feature-controls" role="group" aria-label="Surge features">
+          <button type="button" aria-pressed="true">Media preview</button>
+          <button type="button" aria-pressed="false">Pause and resume</button>
+          <button type="button" aria-pressed="false">Link refresh</button>
+          <button type="button" aria-pressed="false">Multiple mirrors</button>
+          <button type="button" aria-pressed="false">Parallel downloads</button>
+          <button type="button" id="feature-rotation" aria-label="Pause feature rotation">Pause</button>
+        </div>
+        <div class="feature-stage">
+          <div class="feature-layout" data-feature-panel>
+            <div>
+              <h2>Watch before it finishes.</h2>
+              <p>Sequential mode downloads from the beginning so you can preview supported videos or audio while the rest arrives.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Media preview</span><code>sample-video.mp4</code></figcaption>
+              <div class="preview-frame" aria-hidden="true"><span class="material-symbols-outlined">play_circle</span></div>
+              <div class="media-timeline" aria-hidden="true"><span></span></div>
+              <div class="download-legend"><span>Playing now</span><span>Still downloading</span></div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Pick up where you paused.</h2>
+              <p>Pause a transfer and resume from the progress already saved.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Pause and resume</span><code>archive.zip</code></figcaption>
+              <div class="flow-steps">
+                <div><span class="material-symbols-outlined" aria-hidden="true">pause_circle</span><strong>Paused at 64%</strong><span class="range-meter" aria-hidden="true"><i style="width:64%"></i></span></div>
+                <span aria-hidden="true">→</span>
+                <div><span class="material-symbols-outlined" aria-hidden="true">play_circle</span><strong>Resumed from 64%</strong><span class="range-meter" aria-hidden="true"><i style="width:78%"></i></span></div>
+              </div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Replace an expired link.</h2>
+              <p>Give a paused or failed download a fresh link for the same file, then reconnect.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Link refresh</span><code>archive.zip</code></figcaption>
+              <div class="flow-steps">
+                <div><span class="material-symbols-outlined" aria-hidden="true">link_off</span><strong>Expired link</strong></div>
+                <span aria-hidden="true">→</span>
+                <div><span class="material-symbols-outlined" aria-hidden="true">link</span><strong>Fresh link</strong></div>
+              </div>
+              <div class="transfer-target"><span class="material-symbols-outlined" aria-hidden="true">description</span> Same download</div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>Download from multiple mirrors.</h2>
+              <p>Fetch different parts of the same file from multiple sources. Surge can switch sources if a connection drops.</p>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Multiple mirrors</span><code>archive.zip</code></figcaption>
+              <div class="mirror-sources">
+                <span>Mirror A ↓</span><span>Mirror B ↓</span><span>Mirror C ↓</span>
+              </div>
+              <div class="file-ranges mirror-file" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="transfer-target"><span class="material-symbols-outlined" aria-hidden="true">description</span> One file</div>
+            </figure>
+          </div>
+          <div class="feature-layout" data-feature-panel hidden>
+            <div>
+              <h2>One file.<br />Multiple connections.</h2>
+              <p>Each connection requests a different byte range at the same time. Surge writes each range at its offset in the same file.</p>
+              <a href="#benchmarks">See the benchmark <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="download-diagram">
+              <figcaption><span>Three connections shown</span><code>archive.zip · 12 MiB</code></figcaption>
+              <ol class="range-lanes">
+                <li><span>Connection 1</span><code>0–4 MiB</code><span class="range-meter"><i style="width: 80%"></i></span></li>
+                <li><span>Connection 2</span><code>4–8 MiB</code><span class="range-meter"><i style="width: 45%"></i></span></li>
+                <li><span>Connection 3</span><code>8–12 MiB</code><span class="range-meter"><i style="width: 65%"></i></span></li>
+              </ol>
+              <div class="download-legend"><span>↓ Written at their original offsets</span><code>archive.zip</code></div>
+              <div class="file-ranges" aria-hidden="true">
+                <span class="range-meter"><i style="width: 80%"></i></span>
+                <span class="range-meter"><i style="width: 45%"></i></span>
+                <span class="range-meter"><i style="width: 65%"></i></span>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benchmarks Section -->
+    <section id="benchmarks" class="content-section px-6 benchmark-section">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+        <div class="min-w-0">
+          <div class="mb-8">
+            <h2
+              class="font-headline text-4xl md:text-5xl font-black text-white tracking-tighter">
+              Download benchmarks</h2>
+          </div>
+          <div class="space-y-6">
+            <!-- Surge -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">Surge</span>
+                <span class="text-primary text-xl font-black font-body">35.40 MB/s</span>
+              </div>
+              <div class="h-3 bg-white/5 w-full rounded-full p-0.5 border border-white/10 overflow-hidden">
+                <div
+                  class="h-full bg-gradient-to-r from-primary-dim to-primary rounded-full shadow-[0_0_15px_rgba(0,255,255,0.5)] bench-bar"
+                  style="--bar-width: 100%"></div>
+              </div>
+            </div>
+            <!-- aria2c -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">aria2c</span>
+                <span class="text-white/80 font-body">25.57 MB/s</span>
+              </div>
+              <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
+                <div class="h-full bg-white rounded-full bench-bar shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                  style="--bar-width: 72%"></div>
+              </div>
+            </div>
+            <!-- curl -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">curl</span>
+                <span class="text-white/80 font-body">17.79 MB/s</span>
+              </div>
+              <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
+                <div class="h-full bg-white rounded-full bench-bar shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                  style="--bar-width: 50%"></div>
+              </div>
+            </div>
+            <!-- wget -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-end text-xs font-semibold">
+                <span class="text-white text-lg font-bold">wget</span>
+                <span class="text-white/80 font-body">16.57 MB/s</span>
+              </div>
+              <div class="h-2 bg-white/5 w-full rounded-full overflow-hidden border border-white/5">
+                <div class="h-full bg-white rounded-full bench-bar shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                  style="--bar-width: 47%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="download-diagram">
+          <h3 class="text-xl font-bold text-white">Test setup</h3>
+          <dl class="benchmark-conditions">
+            <div><dt>File size</dt><dd>1 GB</dd></div>
+            <div><dt>Connection</dt><dd>360 Mbps</dd></div>
+            <div><dt>System</dt><dd>Windows 11 · Ryzen 5 5600X</dd></div>
+            <div><dt>Sample</dt><dd>Average of five runs</dd></div>
+          </dl>
+          <a class="install-link" href="https://github.com/surgedm/surge#benchmarks">View benchmark results</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="downloads" class="content-section px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter">Download Surge</h2>
+        <p class="mt-4 text-on-surface-variant">After installing, <a class="install-link" href="/docs/getting-started/#make-your-first-download">start your first download</a>.</p>
+        <p class="sr-only" role="status" id="copy-status"></p>
+        <div class="install-columns">
+          <div>
+            <h3>Desktop</h3>
+            <p class="mb-4 flex flex-wrap gap-x-4">
+              <a class="install-link" href={`${project}/releases/tag/v${release}`}>v{release} release notes</a>
+              <a class="install-link" href={`${project}/releases/latest`}>Latest release</a>
+            </p>
+            <dl>
+              <div class="install-row">
+                <dt>Windows</dt>
+                <dd>
+                  <span class="install-method">WinGet</span>
+                  <InstallCommand label="Windows install">winget install surge-downloader.surge</InstallCommand>
+                  <ul aria-label="Windows downloads">
+                    <li><a class="install-link" href={releaseAsset('windows_amd64.zip')}><span aria-hidden="true">↓</span> x64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href={releaseAsset('windows_arm64.zip')}><span aria-hidden="true">↓</span> ARM64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href={releaseAsset('windows_386.zip')}><span aria-hidden="true">↓</span> 32-bit (.zip with .exe)</a></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="install-row">
+                <dt>macOS</dt>
+                <dd>
+                  <span class="install-method">Homebrew</span>
+                  <InstallCommand label="macOS install">brew install SurgeDM/tap/surge</InstallCommand>
+                  <ul aria-label="macOS downloads">
+                    <li><a class="install-link" href={releaseAsset('darwin_arm64.tar.gz')}><span aria-hidden="true">↓</span> Apple Silicon (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset('darwin_amd64.tar.gz')}><span aria-hidden="true">↓</span> Intel (.tar.gz)</a></li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="install-row">
+                <dt>Linux</dt>
+                <dd>
+                  <span class="install-method">Arch Linux (AUR)</span>
+                  <InstallCommand label="Linux install">yay -S surge</InstallCommand>
+                  <ul aria-label="Linux downloads">
+                    <li><a class="install-link" href={releaseAsset('linux_x86_64.AppImage')}><span aria-hidden="true">↓</span> x64 (.AppImage)</a></li>
+                    <li><a class="install-link" href={releaseAsset('linux_amd64.tar.gz')}><span aria-hidden="true">↓</span> x64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset('linux_arm64.tar.gz')}><span aria-hidden="true">↓</span> ARM64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset('linux_386.tar.gz')}><span aria-hidden="true">↓</span> 32-bit (.tar.gz)</a></li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h3>Other ways to install</h3>
+            <dl>
+              <div class="install-row">
+                <dt>macOS / Linux</dt>
+                <dd>
+                  <span class="install-method">Install script</span>
+                  <InstallCommand label="macOS and Linux install">curl -fsSL https://surgedm.github.io/install | sh</InstallCommand>
+                </dd>
+              </div>
+              <div class="install-row">
+                <dt>Docker</dt>
+                <dd>
+                  <span class="install-method">Self-hosted server</span>
+                  <p class="text-on-surface-variant">Download the Compose file before starting the server.</p>
+                  <a href={`${project}/tree/v${release}#5-server-mode-with-docker-compose`} class="install-link">
+                    Docker setup guide
+                  </a>
+                </dd>
+              </div>
+              <div class="install-row">
+                <dt>Go</dt>
+                <dd>
+                  <span class="install-method">Requires Go 1.26+ for v{release}</span>
+                  <InstallCommand label="Go install">go install github.com/SurgeDM/Surge@v{release}</InstallCommand>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="extension" class="content-section px-6">
+      <div class="feature-layout max-w-6xl mx-auto">
+        <div>
+          <h2>Click in your browser.<br />Download in Surge.</h2>
+          <p>The extension sends browser downloads to your Surge queue. Connect it with the token from <strong>Settings → Extension</strong>.</p>
+          <ul class="extension-links">
+            <li><a href="https://chromewebstore.google.com/detail/surge-download-manager/cakjmkhlofkhjmfkjlclgbfdklhdnkgl">Chrome Web Store <span aria-hidden="true">↗</span></a><span>Chrome, Edge, and Brave</span></li>
+            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/surge/">Firefox Add-ons <span aria-hidden="true">↗</span></a><span>Firefox</span></li>
+          </ul>
+          <p><a href="/docs/guides/browser-extension/">Set up the browser extension</a> · <a href="/privacy/">Privacy policy</a></p>
+        </div>
+        <figure class="download-diagram extension-diagram">
+          <figcaption><span>Browser download</span><code>archive.zip</code></figcaption>
+          <div class="extension-handoff" aria-hidden="true">
+            <span class="material-symbols-outlined">language</span>
+            <span>Sent to Surge</span>
+            <span class="material-symbols-outlined">south</span>
+          </div>
+          <div class="extension-queue">
+            <div><span class="material-symbols-outlined" aria-hidden="true">terminal</span> Surge queue</div>
+            <p><code>archive.zip</code><span>Downloading</span></p>
+            <span class="range-meter" aria-hidden="true"><i style="width: 58%"></i></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="partners" class="content-section px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter">Partners</h2>
+        <p class="mt-4 text-on-surface-variant">Organizations helping keep Surge free and open source.</p>
+        <div class="partner-grid">
+          <a class="partner-card" href="https://fossunited.org/">
+            <span>FOSS United</span>
+            <small>Supports Surge through its open-source grant program</small>
+          </a>
+          <div class="partner-invite">
+            <h3>Become a partner</h3>
+            <p>Help us build and maintain an open-source download manager for everyone.</p>
+            <a href="mailto:surge.downloader@gmail.com?subject=Surge%20partnership">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="content-section px-6">
+      <div class="feature-layout support-panel max-w-6xl mx-auto">
+        <div>
+          <h2>Support Surge</h2>
+          <p>Surge is built by two CS students. Donations help maintain the browser extensions and fund development tools and Debrid integration.</p>
+          <div class="support-links">
+            <a href="https://github.com/sponsors/surgedm">GitHub Sponsors ↗</a>
+            <a href="https://www.buymeacoffee.com/surge.downloader">Buy us a coffee ↗</a>
+          </div>
+        </div>
+        <div class="support-art" aria-hidden="true">
+          <span class="material-symbols-outlined">terminal</span>
+          <span class="material-symbols-outlined">favorite</span>
+        </div>
+      </div>
+    </section>
+  <dialog id="media-lightbox" class="media-lightbox" aria-label="Expanded Surge preview">
+    <div class="media-lightbox-content">
+      <button id="media-lightbox-close" class="media-lightbox-close" type="button" aria-label="Close expanded preview" autofocus>
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+      <img id="media-lightbox-image" class="media-lightbox-media" alt="" hidden />
+      <video id="media-lightbox-video" class="media-lightbox-media" aria-label="Surge demo" playsinline controls hidden></video>
+    </div>
+  </dialog>
+</MarketingLayout>
+<script>
+  import '../scripts/home.js';
+</script>

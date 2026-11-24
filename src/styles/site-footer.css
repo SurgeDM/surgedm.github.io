@@ -1,0 +1,79 @@
+.site-footer {
+  margin-block-start: 3rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid var(--sl-color-gray-5, #40364d);
+  border-radius: .75rem;
+  background: var(--sl-color-gray-6, #191523);
+  color: var(--sl-color-gray-2, #b3bdcb);
+  font-size: .875rem;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.site-footer-intro { grid-column: span 2; }
+
+@media (min-width: 48rem) {
+  .site-footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+  .site-footer-intro { grid-column: auto; }
+}
+
+.site-footer .footer-headline {
+  color: var(--sl-color-white, #eef2f8);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+  margin-block-end: .75rem;
+}
+
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { color: var(--docs-brand, #a6fffc); text-decoration: underline; }
+.site-footer .site-footer-cta { color: var(--docs-brand, #a6fffc); font-weight: 650; }
+.site-footer-links { display: grid; align-content: start; gap: .4rem; }
+.site-footer-label { color: var(--sl-color-white, #eef2f8); font-weight: 700; }
+
+.site-footer-wordmark {
+  margin-block-start: 1.5rem;
+  border-block-start: 1px solid var(--sl-color-gray-5, #40364d);
+  color: var(--docs-brand, #a6fffc);
+  font-size: clamp(4rem, 13vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: 1.1;
+}
+
+.site-footer-wordmark span { color: var(--docs-dot, #efa4f0); }
+
+.site-footer-meta, .site-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+}
+
+.site-footer-meta {
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--sl-color-gray-5, #40364d);
+}
+
+body > .site-footer {
+  margin-block-start: 0;
+  border-radius: 0;
+  border-inline: 0;
+  border-block-end: 0;
+  padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.site-footer-inner {
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--docs-brand, #a6fffc);
+  outline-offset: 3px;
+}
