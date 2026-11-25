@@ -3,10 +3,8 @@ import InstallCommand from '../components/InstallCommand.astro';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import '../styles/home.css';
 
-const release = '0.12.4';
 const project = 'https://github.com/SurgeDM/Surge';
-const releaseAsset = (filename: string) =>
-  `${project}/releases/download/v${release}/Surge_${release}_${filename}`;
+const releaseAsset = () => `${project}/releases`;
 ---
 <MarketingLayout title="Surge — Terminal Download Manager" description="Download large files in parallel with Surge, an open-source terminal download manager for Linux, macOS, and Windows." canonical="/">
   <Fragment slot="head">
@@ -242,8 +240,7 @@ const releaseAsset = (filename: string) =>
           <div>
             <h3>Desktop</h3>
             <p class="mb-4 flex flex-wrap gap-x-4">
-              <a class="install-link" href={`${project}/releases/tag/v${release}`}>v{release} release notes</a>
-              <a class="install-link" href={`${project}/releases/latest`}>Latest release</a>
+              <a class="install-link" href={`${project}/releases`} data-core-release>Latest Surge release notes</a>
             </p>
             <dl>
               <div class="install-row">
@@ -252,9 +249,9 @@ const releaseAsset = (filename: string) =>
                   <span class="install-method">WinGet</span>
                   <InstallCommand label="Windows install">winget install surge-downloader.surge</InstallCommand>
                   <ul aria-label="Windows downloads">
-                    <li><a class="install-link" href={releaseAsset('windows_amd64.zip')}><span aria-hidden="true">↓</span> x64 (.zip with .exe)</a></li>
-                    <li><a class="install-link" href={releaseAsset('windows_arm64.zip')}><span aria-hidden="true">↓</span> ARM64 (.zip with .exe)</a></li>
-                    <li><a class="install-link" href={releaseAsset('windows_386.zip')}><span aria-hidden="true">↓</span> 32-bit (.zip with .exe)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="windows_amd64.zip"><span aria-hidden="true">↓</span> x64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="windows_arm64.zip"><span aria-hidden="true">↓</span> ARM64 (.zip with .exe)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="windows_386.zip"><span aria-hidden="true">↓</span> 32-bit (.zip with .exe)</a></li>
                   </ul>
                 </dd>
               </div>
@@ -264,8 +261,8 @@ const releaseAsset = (filename: string) =>
                   <span class="install-method">Homebrew</span>
                   <InstallCommand label="macOS install">brew install SurgeDM/tap/surge</InstallCommand>
                   <ul aria-label="macOS downloads">
-                    <li><a class="install-link" href={releaseAsset('darwin_arm64.tar.gz')}><span aria-hidden="true">↓</span> Apple Silicon (.tar.gz)</a></li>
-                    <li><a class="install-link" href={releaseAsset('darwin_amd64.tar.gz')}><span aria-hidden="true">↓</span> Intel (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="darwin_arm64.tar.gz"><span aria-hidden="true">↓</span> Apple Silicon (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="darwin_amd64.tar.gz"><span aria-hidden="true">↓</span> Intel (.tar.gz)</a></li>
                   </ul>
                 </dd>
               </div>
@@ -275,10 +272,10 @@ const releaseAsset = (filename: string) =>
                   <span class="install-method">Arch Linux (AUR)</span>
                   <InstallCommand label="Linux install">yay -S surge</InstallCommand>
                   <ul aria-label="Linux downloads">
-                    <li><a class="install-link" href={releaseAsset('linux_x86_64.AppImage')}><span aria-hidden="true">↓</span> x64 (.AppImage)</a></li>
-                    <li><a class="install-link" href={releaseAsset('linux_amd64.tar.gz')}><span aria-hidden="true">↓</span> x64 (.tar.gz)</a></li>
-                    <li><a class="install-link" href={releaseAsset('linux_arm64.tar.gz')}><span aria-hidden="true">↓</span> ARM64 (.tar.gz)</a></li>
-                    <li><a class="install-link" href={releaseAsset('linux_386.tar.gz')}><span aria-hidden="true">↓</span> 32-bit (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="linux_x86_64.AppImage"><span aria-hidden="true">↓</span> x64 (.AppImage)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="linux_amd64.tar.gz"><span aria-hidden="true">↓</span> x64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="linux_arm64.tar.gz"><span aria-hidden="true">↓</span> ARM64 (.tar.gz)</a></li>
+                    <li><a class="install-link" href={releaseAsset()} data-release-asset="linux_386.tar.gz"><span aria-hidden="true">↓</span> 32-bit (.tar.gz)</a></li>
                   </ul>
                 </dd>
               </div>
@@ -299,7 +296,7 @@ const releaseAsset = (filename: string) =>
                 <dd>
                   <span class="install-method">Self-hosted server</span>
                   <p class="text-on-surface-variant">Download the Compose file before starting the server.</p>
-                  <a href={`${project}/tree/v${release}#5-server-mode-with-docker-compose`} class="install-link">
+                  <a href={`${project}/blob/main/README.md#5-server-mode-with-docker-compose`} class="install-link">
                     Docker setup guide
                   </a>
                 </dd>
@@ -307,8 +304,8 @@ const releaseAsset = (filename: string) =>
               <div class="install-row">
                 <dt>Go</dt>
                 <dd>
-                  <span class="install-method">Requires Go 1.26+ for v{release}</span>
-                  <InstallCommand label="Go install">go install github.com/SurgeDM/Surge@v{release}</InstallCommand>
+                  <span class="install-method">Requires Go</span>
+                  <InstallCommand label="Go install">go install github.com/SurgeDM/Surge@latest</InstallCommand>
                 </dd>
               </div>
             </dl>
@@ -390,4 +387,35 @@ const releaseAsset = (filename: string) =>
 </MarketingLayout>
 <script>
   import '../scripts/home.js';
+</script>
+
+<script>
+  // Resolve asset names at visit time so a new release needs no site rebuild.
+  fetch('https://api.github.com/repos/SurgeDM/Surge/releases?per_page=100')
+    .then((response) => {
+      if (!response.ok) throw new Error('Could not load the latest release');
+      return response.json();
+    })
+    .then((releases) => {
+      if (!Array.isArray(releases)) return;
+      const release = releases.filter((item: { tag_name: string; draft: boolean; prerelease: boolean }) =>
+        !item.draft && !item.prerelease && /^v\d+\.\d+\.\d+$/.test(item.tag_name))
+        .sort((a: { tag_name: string }, b: { tag_name: string }) => {
+          const left = a.tag_name.slice(1).split('.').map(Number);
+          const right = b.tag_name.slice(1).split('.').map(Number);
+          return right[0] - left[0] || right[1] - left[1] || right[2] - left[2];
+        })[0];
+      if (!release || !Array.isArray(release.assets)) return;
+      const notes = document.querySelector<HTMLAnchorElement>('[data-core-release]');
+      if (notes) notes.href = `https://github.com/SurgeDM/Surge/releases/tag/${release.tag_name}`;
+      document.querySelectorAll<HTMLAnchorElement>('[data-release-asset]').forEach((link) => {
+        const suffix = link.dataset.releaseAsset;
+        const asset = release.assets.find((item: { name: string; browser_download_url: string }) =>
+          suffix && item.name.endsWith(`_${suffix}`));
+        if (asset?.browser_download_url?.startsWith('https://github.com/SurgeDM/Surge/releases/download/')) {
+          link.href = asset.browser_download_url;
+        }
+      });
+    })
+    .catch(() => { /* Links fall back to the releases page. */ });
 </script>
